@@ -1,9 +1,12 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
+import Button from "./components/Button";
+import Input from "./components/Input";
 import "./index.css"; // Import Tailwind styles
 
-import Button from "./components/Button"; // <-- You need this import!
-
 function App() {
+  const [value, setValue] = React.useState("");
+  const [error, setError] = React.useState("");
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">UI Component Library Preview</h1>
@@ -17,6 +20,22 @@ function App() {
       <Button variant="neutral" disabled>
         Disabled
       </Button>
+
+      <Input
+        label="Username"
+        id="username"
+        placeholder="Enter your username"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        required
+        error={error}
+      />
+      <button
+        className="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
+        onClick={() => setError(value ? "" : "This field is required.")}
+      >
+        Validate
+      </button>
     </div>
   );
 }
