@@ -1,0 +1,45 @@
+.hcc-btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    box-shadow 0.18s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.hcc-btn:hover,
+.hcc-btn:focus {
+  background: #1d4ed8;
+  outline: none;
+}
+
+.hcc-btn:active {
+  background: #1e40af;
+}
+
+.hcc-btn--secondary {
+  background: #e5e7eb;
+  color: #1e293b;
+}
+
+.hcc-btn--secondary:hover,
+.hcc-btn--secondary:focus {
+  background: #d1d5db;
+}
+
+.hcc-btn--danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+.hcc-btn--danger:hover,
+.hcc-btn--danger:focus {
+  background: #b91c1c;
+}

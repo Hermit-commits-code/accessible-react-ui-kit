@@ -1,24 +1,37 @@
-function Button({ variant = "primary", disabled = false, children, ...rest }) {
-  const base =
-    "px-4 py-2 rounded font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition";
-  const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-gray-100 text-gray-800 hover:bg-gray-200",
-    neutral: "bg-white text-gray-900 border hover:bg-gray-50",
-  };
-  const disabledStyles = "opacity-50 cursor-not-allowed";
+import React from "react";
+import "../hcc-button.css";
 
-  const className = [
-    base,
-    variants[variant] || variants.primary,
-    disabled ? disabledStyles : "",
-  ].join(" ");
+/**
+ * Button Component
+ *
+ * Props:
+ * - children: Content inside the button
+ * - variant: "primary" | "secondary" | "danger" (default: "primary")
+ * - type: "button" | "submit" | "reset" (default: "button")
+ * - className: string (optional, additional classes)
+ * - ...rest: any other props (onClick, disabled, etc.)
+ */
+export default function Button({
+  children,
+  variant = "primary",
+  type = "button",
+  className = "",
+  ...rest
+}) {
+  const variantClass =
+    variant === "secondary"
+      ? "hcc-btn--secondary"
+      : variant === "danger"
+        ? "hcc-btn--danger"
+        : "";
 
   return (
-    <button type="button" className={className} disabled={disabled} {...rest}>
+    <button
+      type={type}
+      className={`hcc-btn ${variantClass} ${className}`.trim()}
+      {...rest}
+    >
       {children}
     </button>
   );
 }
-
-export default Button;
