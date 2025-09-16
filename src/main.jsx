@@ -3,11 +3,13 @@ import ReactDOM from "react-dom/client";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import Input from "./components/Input";
+import Modal from "./components/Modal";
 import "./index.css"; // Import Tailwind styles
 
 function App() {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState("");
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">UI Component Library Preview</h1>
@@ -37,16 +39,23 @@ function App() {
       >
         Validate
       </button>
-
       <Card>
         <h2 className="text-lg font-semibold mb-2">Card Title</h2>
         <p className="mb-2">
           This is a simple card component. Add any content you like!
         </p>
-        <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">
-          Action
+        <button
+          className="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
+          onClick={() => setIsModalOpen(true)}
+        >
+          Open Modal
         </button>
       </Card>
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h3 className="text-xl font-bold mb-4">Hello from the Modal!</h3>
+        <p>This is a simple modal. Click outside or the × to close.</p>
+      </Modal>
     </div>
   );
 }
