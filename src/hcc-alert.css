@@ -1,0 +1,42 @@
+.hcc-alert {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  background: #f3f4f6;
+  color: #334155;
+  gap: 0.5rem;
+}
+
+.hcc-alert--info {
+  background: #e0f2fe;
+  border-color: #38bdf8;
+  color: #0369a1;
+}
+
+.hcc-alert--success {
+  background: #dcfce7;
+  border-color: #22d3ee;
+  color: #166534;
+}
+
+.hcc-alert--warning {
+  background: #fef3c7;
+  border-color: #f59e42;
+  color: #b45309;
+}
+
+.hcc-alert--error {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.hcc-alert__icon {
+  margin-right: 0.5rem;
+  font-size: 1.25em;
+  flex-shrink: 0;
+}

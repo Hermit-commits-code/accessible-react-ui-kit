@@ -1,13 +1,10 @@
-function Card({ children, className = "", ...rest }) {
+import React from "react";
+import "../hcc-card.css";
+
+export default function Card({ children, className = "", ...rest }) {
   return (
-    <div
-      className={["bg-white rounded-lg shadow p-4", className]
-        .filter(Boolean)
-        .join(" ")}
-      {...rest}
-    >
+    <div className={`hcc-card ${className}`.trim()} {...rest}>
       {children}
     </div>
   );
 }
-export default Card;

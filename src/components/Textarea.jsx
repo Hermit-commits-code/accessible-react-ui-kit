@@ -1,36 +1,36 @@
 import React from "react";
-import "../hcc-input.css";
+import "../hcc-textarea.css";
 
-export default function Input({
+export default function Textarea({
   label,
   id,
   error = "",
   required = false,
   className = "",
-  value, // Always required for controlled
-  onChange, // Always required for controlled
+  value,
+  onChange,
   ...rest
 }) {
   return (
-    <div className={`hcc-input-group ${className}`.trim()}>
+    <div className={`hcc-textarea-group ${className}`.trim()}>
       {label && (
-        <label htmlFor={id} className="hcc-input-label">
+        <label htmlFor={id} className="hcc-textarea-label">
           {label}
           {required && <span style={{ color: "#dc2626" }}> *</span>}
         </label>
       )}
-      <input
+      <textarea
         id={id}
-        className="hcc-input"
+        className="hcc-textarea"
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         required={required}
-        value={value} // Always controlled
-        onChange={onChange} // Always controlled
+        value={value}
+        onChange={onChange}
         {...rest}
       />
       {error && (
-        <span id={`${id}-error`} className="hcc-input-error" role="alert">
+        <span id={`${id}-error`} className="hcc-textarea-error" role="alert">
           {error}
         </span>
       )}

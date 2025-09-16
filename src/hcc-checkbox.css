@@ -1,0 +1,53 @@
+.hcc-checkbox-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.hcc-checkbox {
+  width: 1.1em;
+  height: 1.1em;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.25em;
+  appearance: none;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+  position: relative;
+}
+
+.hcc-checkbox:checked {
+  border-color: #2563eb;
+  background-color: #2563eb;
+}
+.hcc-checkbox:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 27%;
+  top: 10%;
+  width: 35%;
+  height: 60%;
+  border: solid #fff;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+.hcc-checkbox:focus {
+  box-shadow: 0 0 0 2px #2563eb55;
+}
+.hcc-checkbox-label {
+  font-size: 1rem;
+  color: #1e293b;
+  user-select: none;
+}
+.hcc-checkbox-error {
+  color: #dc2626;
+  font-size: 0.95em;
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,15 @@
+.hcc-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: hcc-spinner-rotate 0.75s linear infinite;
+}
+
+@keyframes hcc-spinner-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

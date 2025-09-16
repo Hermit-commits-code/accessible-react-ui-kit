@@ -1,0 +1,60 @@
+.hcc-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.hcc-radio-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.hcc-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hcc-radio {
+  width: 1.1em;
+  height: 1.1em;
+  border: 1.5px solid #d1d5db;
+  border-radius: 50%;
+  appearance: none;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  position: relative;
+  display: inline-block;
+}
+
+.hcc-radio:checked {
+  border-color: #2563eb;
+  background-color: #fff;
+}
+
+.hcc-radio:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0.3em;
+  top: 0.3em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.hcc-radio:focus {
+  box-shadow: 0 0 0 2px #2563eb55;
+}
+
+.hcc-radio-error {
+  color: #dc2626;
+  font-size: 0.95em;
+  margin-top: 0.25rem;
+}

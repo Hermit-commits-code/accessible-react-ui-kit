@@ -1,35 +1,33 @@
-function Modal({ isOpen, onClose, children, className = "" }) {
+import React from "react";
+import "../hcc-modal.css";
+
+export default function Modal({
+  isOpen,
+  onClose,
+  children,
+  className = "",
+  ...rest
+}) {
   if (!isOpen) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-      tabIndex={-1}
-      aria-modal="true"
-      role="dialog"
-      onClick={onClose}
-    >
+    <div className="hcc-modal-backdrop" onClick={onClose} tabIndex={-1}>
       <div
-        className={[
-          "bg-white rounded-lg shadow-lg max-w-lg w-full p-6",
-          className,
-        ]
-          .filter(Boolean)
-          .join(" ")}
+        className={`hcc-modal ${className}`.trim()}
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        {...rest}
       >
         <button
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-          onClick={onClose}
+          className="hcc-modal__close-btn"
           aria-label="Close modal"
-          tabIndex={0}
+          onClick={onClose}
         >
-          &times;
+          ×
         </button>
         {children}
       </div>
     </div>
   );
 }
-
-export default Modal;
