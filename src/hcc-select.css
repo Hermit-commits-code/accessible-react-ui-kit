@@ -1,0 +1,43 @@
+.hcc-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.hcc-select-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.hcc-select {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  color: #334155;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.99967 6L7.99967 10L11.9997 6' stroke='%23334155' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 0.75rem center/1.25rem 1.25rem;
+  appearance: none;
+  transition: border-color 0.15s;
+}
+
+.hcc-select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.hcc-select[aria-invalid="true"] {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.hcc-select-error {
+  color: #dc2626;
+  font-size: 0.95em;
+  margin-top: 0.25rem;
+}

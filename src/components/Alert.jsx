@@ -1,23 +1,40 @@
-const ALERT_STYLES = {
-  info: "bg-blue-100 text-blue-900 border-blue-300",
-  success: "bg-green-100 text-green-900 border-green-300",
-  warning: "bg-yellow-100 text-yellow-900 border-yellow-300",
-  error: "bg-red-100 text-red-900 border-red-300",
+import React from "react";
+import "../hcc-alert.css";
+
+const icons = {
+  info: (
+    <span className="hcc-alert__icon" aria-label="info" role="img">
+      ℹ️
+    </span>
+  ),
+  success: (
+    <span className="hcc-alert__icon" aria-label="success" role="img">
+      ✅
+    </span>
+  ),
+  warning: (
+    <span className="hcc-alert__icon" aria-label="warning" role="img">
+      ⚠️
+    </span>
+  ),
+  error: (
+    <span className="hcc-alert__icon" aria-label="error" role="img">
+      ❌
+    </span>
+  ),
 };
 
-function Alert({ children, status = "info", className = "", ...props }) {
-  const style = ALERT_STYLES[status] || ALERT_STYLES.info;
+export default function Alert({
+  status = "info", // info, success, warning, error
+  children,
+  className = "",
+  ...rest
+}) {
+  const statusClass = `hcc-alert--${status}`;
   return (
-    <div
-      className={["border-l-4 p-4 rounded-md mb-4", style, className]
-        .filter(Boolean)
-        .join(" ")}
-      role="alert"
-      {...props}
-    >
-      {children}
+    <div className={`hcc-alert ${statusClass} ${className}`.trim()} {...rest}>
+      {icons[status]}
+      <span>{children}</span>
     </div>
   );
 }
-
-export default Alert;

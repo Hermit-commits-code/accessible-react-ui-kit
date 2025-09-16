@@ -1,0 +1,49 @@
+.hcc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 41, 59, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hcc-modal {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem 1.75rem 1.5rem 1.75rem;
+  min-width: 320px;
+  max-width: 96vw;
+  box-shadow: 0 12px 32px 0 rgba(30, 41, 59, 0.14);
+  position: relative;
+  z-index: 1001;
+  animation: hcc-modal-fade-in 0.18s;
+}
+
+@keyframes hcc-modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hcc-modal__close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #334155;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.hcc-modal__close-btn:hover,
+.hcc-modal__close-btn:focus {
+  color: #dc2626;
+  outline: none;
+}
