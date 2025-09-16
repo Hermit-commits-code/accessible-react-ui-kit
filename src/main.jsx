@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Alert from "./components/Alert";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import Input from "./components/Input";
@@ -39,6 +40,16 @@ function App() {
       >
         Validate
       </button>
+
+      <Alert status="info">
+        This is an informational alert. Use <code>status="info"</code>.
+      </Alert>
+      <Alert status="success">
+        Success! Your action was completed successfully.
+      </Alert>
+      <Alert status="warning">Warning! Please double-check your action.</Alert>
+      <Alert status="error">Error! Something went wrong.</Alert>
+
       <Card>
         <h2 className="text-lg font-semibold mb-2">Card Title</h2>
         <p className="mb-2">
