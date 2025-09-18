@@ -19,6 +19,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2025-09-18
+
+### Added
+
+- TypeScript type definitions (`.d.ts` files) for all components for improved TypeScript support and autocompletion.
+
+### Changed
+
+- Updated README to document TypeScript support.
+
+---
+
 ## [Unreleased]
 
 ### Added

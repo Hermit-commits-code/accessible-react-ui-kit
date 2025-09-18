@@ -45,7 +45,7 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 - **Documented:** Clear prop tables and usage examples. Per-component docs for every component.
 - **Robust Help Text:** All components support always-rendered help text for accessibility.
 - **Custom className:** All components accept a custom className on the outermost element.
-- **TypeScript Friendly:** Written in/compatible with TypeScript (coming soon).
+- **TypeScript Support:** Type definitions included for all components via .d.ts files.
 - **Lightweight:** Minimal dependencies, tree-shakable.
 - **Composable:** Easy to integrate and extend.
 
