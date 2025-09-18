@@ -1,6 +1,6 @@
 {
   "name": "accessible-react-ui-kit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Accessible-first, timeless UI blocks for React projects.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
