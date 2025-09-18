@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-button.css";
+import React from 'react'
+import './hcc-button.css'
 
 /**
  * Button component
@@ -18,31 +18,31 @@ import "../hcc-button.css";
  * - ...rest button props
  */
 export default function Button({
-  variant = "primary",
-  size = "md",
+  variant = 'primary',
+  size = 'md',
   disabled = false,
   loading = false,
   full = false,
   leftIcon,
   rightIcon,
   children,
-  type = "button",
-  className = "",
+  type = 'button',
+  className = '',
   ...rest
 }) {
-  const isDisabled = disabled || loading;
+  const isDisabled = disabled || loading
   return (
     <button
       type={type}
       className={[
-        "hcc-btn",
+        'hcc-btn',
         `hcc-btn--${variant}`,
-        size !== "md" && `hcc-btn--${size}`,
-        full && "hcc-btn--full",
+        size !== 'md' && `hcc-btn--${size}`,
+        full && 'hcc-btn--full',
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
       disabled={isDisabled}
       aria-disabled={isDisabled}
       {...rest}
@@ -52,5 +52,5 @@ export default function Button({
       {children}
       {rightIcon && <span className="hcc-btn-icon">{rightIcon}</span>}
     </button>
-  );
+  )
 }

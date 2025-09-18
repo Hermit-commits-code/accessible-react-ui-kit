@@ -1,5 +1,5 @@
 {
-  "name": "accessible-react-ui-kit",
+  "name": "@hermit-commits-code/accessible-react-ui-kit",
   "version": "1.1.2",
   "description": "Accessible-first, timeless UI blocks for React projects.",
   "main": "dist/index.js",

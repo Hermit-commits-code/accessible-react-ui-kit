@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-spinner.css";
+import React from 'react'
+import './hcc-spinner.css'
 
 /**
  * Spinner component (loading indicator)
@@ -12,25 +12,25 @@ import "../hcc-spinner.css";
  * - ...rest
  */
 export default function Spinner({
-  size = "md",
-  color = "primary",
-  ariaLabel = "Loading",
-  className = "",
+  size = 'md',
+  color = 'primary',
+  ariaLabel = 'Loading',
+  className = '',
   ...rest
 }) {
   return (
     <span
       className={[
-        "hcc-spinner",
-        size !== "md" && `hcc-spinner--${size}`,
-        color !== "primary" && `hcc-spinner--${color}`,
+        'hcc-spinner',
+        size !== 'md' && `hcc-spinner--${size}`,
+        color !== 'primary' && `hcc-spinner--${color}`,
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
       role="status"
       aria-label={ariaLabel}
       {...rest}
     />
-  );
+  )
 }

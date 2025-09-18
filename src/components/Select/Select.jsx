@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-select.css";
+import React from 'react'
+import './hcc-select.css'
 
 /**
  * Select component
@@ -28,43 +28,43 @@ export default function Select({
   value,
   onChange,
   options = [],
-  placeholder = "",
+  placeholder = '',
   required = false,
   disabled = false,
   readOnly = false,
-  size = "md",
+  size = 'md',
   fullWidth = false,
-  error = "",
-  success = "",
-  help = "",
-  className = "",
+  error = '',
+  success = '',
+  help = '',
+  className = '',
   ...rest
 }) {
   const selectId =
     id ||
     (label
       ? `hcc-select-${Math.random().toString(36).slice(2, 10)}`
-      : undefined);
+      : undefined)
   const describedBy =
     [
-      error ? `${selectId}-error` : "",
-      success ? `${selectId}-success` : "",
-      help ? `${selectId}-help` : "",
+      error ? `${selectId}-error` : '',
+      success ? `${selectId}-success` : '',
+      help ? `${selectId}-help` : '',
     ]
       .filter(Boolean)
-      .join(" ") || undefined;
+      .join(' ') || undefined
 
-  let selectStateClass = "";
-  if (error) selectStateClass = "hcc-select--error";
-  else if (success) selectStateClass = "hcc-select--success";
+  let selectStateClass = ''
+  if (error) selectStateClass = 'hcc-select--error'
+  else if (success) selectStateClass = 'hcc-select--success'
 
   return (
     <div className="hcc-select-group">
       {label && (
         <label htmlFor={selectId} className="hcc-select-label">
-          {label}{" "}
+          {label}{' '}
           {required && (
-            <span aria-hidden="true" style={{ color: "#dc2626" }}>
+            <span aria-hidden="true" style={{ color: '#dc2626' }}>
               *
             </span>
           )}
@@ -74,14 +74,14 @@ export default function Select({
         <select
           id={selectId}
           className={[
-            "hcc-select",
+            'hcc-select',
             `hcc-select--${size}`,
-            fullWidth ? "hcc-select--full" : "",
+            fullWidth ? 'hcc-select--full' : '',
             selectStateClass,
             className,
           ]
             .filter(Boolean)
-            .join(" ")}
+            .join(' ')}
           value={value}
           onChange={onChange}
           required={required}
@@ -120,20 +120,20 @@ export default function Select({
         </svg>
       </div>
       {help && !error && (
-        <div id={selectId + "-help"} className="hcc-select-help">
+        <div id={selectId + '-help'} className="hcc-select-help">
           {help}
         </div>
       )}
       {error && (
-        <div id={selectId + "-error"} className="hcc-select-error" role="alert">
+        <div id={selectId + '-error'} className="hcc-select-error" role="alert">
           {error}
         </div>
       )}
       {success && !error && (
-        <div id={selectId + "-success"} className="hcc-select-success">
+        <div id={selectId + '-success'} className="hcc-select-success">
           {success}
         </div>
       )}
     </div>
-  );
+  )
 }

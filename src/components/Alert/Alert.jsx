@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-alert.css";
+import React from 'react'
+import './hcc-alert.css'
 
 const ICONS = {
   info: (
@@ -92,7 +92,7 @@ const ICONS = {
       />
     </svg>
   ),
-};
+}
 
 /**
  * Alert component
@@ -107,29 +107,28 @@ const ICONS = {
  * - ...rest: props for div
  */
 export default function Alert({
-  variant = "info",
+  variant = 'info',
   title,
   children,
   onClose,
   inline = false,
-  className = "",
+  className = '',
   ...rest
 }) {
-  const role =
-    variant === "error" || variant === "warning" ? "alert" : "status";
+  const role = variant === 'error' || variant === 'warning' ? 'alert' : 'status'
   const ariaLive =
-    variant === "error" || variant === "warning" ? "assertive" : "polite";
+    variant === 'error' || variant === 'warning' ? 'assertive' : 'polite'
 
   return (
     <div
       className={[
-        "hcc-alert",
+        'hcc-alert',
         `hcc-alert--${variant}`,
-        inline ? "hcc-alert-inline" : "",
+        inline ? 'hcc-alert-inline' : '',
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
       role={role}
       aria-live={ariaLive}
       {...rest}
@@ -150,5 +149,5 @@ export default function Alert({
         </button>
       )}
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../hcc-checkbox.css'
+import './hcc-checkbox.css'
 
 /**
  * Checkbox component

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../hcc-card.css'
+import './hcc-card.css'
 
 /**
  * Card component

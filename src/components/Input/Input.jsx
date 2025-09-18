@@ -1,5 +1,5 @@
 import React from 'react'
-import '../hcc-input.css'
+import './hcc-input.css'
 
 /**
  * Input component

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../hcc-radio.css'
+import './hcc-radio.css'
 
 /**
  * RadioGroup component

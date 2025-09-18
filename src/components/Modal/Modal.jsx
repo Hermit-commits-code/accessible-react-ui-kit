@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import '../hcc-modal.css'
+import './hcc-modal.css'
 
 /**
  * Modal component (dialog)

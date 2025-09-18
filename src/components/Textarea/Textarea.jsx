@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-textarea.css";
+import React from 'react'
+import './hcc-textarea.css'
 
 /**
  * Textarea component
@@ -32,42 +32,42 @@ export default function Textarea({
   required = false,
   disabled = false,
   readOnly = false,
-  size = "md",
+  size = 'md',
   fullWidth = false,
-  error = "",
-  success = "",
-  help = "",
+  error = '',
+  success = '',
+  help = '',
   maxLength,
   showCount = false,
-  className = "",
+  className = '',
   ...rest
 }) {
   const textareaId =
     id ||
     (label
       ? `hcc-textarea-${Math.random().toString(36).slice(2, 10)}`
-      : undefined);
+      : undefined)
   const describedBy =
     [
-      error ? `${textareaId}-error` : "",
-      success ? `${textareaId}-success` : "",
-      help ? `${textareaId}-help` : "",
-      showCount && maxLength ? `${textareaId}-counter` : "",
+      error ? `${textareaId}-error` : '',
+      success ? `${textareaId}-success` : '',
+      help ? `${textareaId}-help` : '',
+      showCount && maxLength ? `${textareaId}-counter` : '',
     ]
       .filter(Boolean)
-      .join(" ") || undefined;
+      .join(' ') || undefined
 
-  let textareaStateClass = "";
-  if (error) textareaStateClass = "hcc-textarea--error";
-  else if (success) textareaStateClass = "hcc-textarea--success";
+  let textareaStateClass = ''
+  if (error) textareaStateClass = 'hcc-textarea--error'
+  else if (success) textareaStateClass = 'hcc-textarea--success'
 
   return (
     <div className="hcc-textarea-group">
       {label && (
         <label htmlFor={textareaId} className="hcc-textarea-label">
-          {label}{" "}
+          {label}{' '}
           {required && (
-            <span aria-hidden="true" style={{ color: "#dc2626" }}>
+            <span aria-hidden="true" style={{ color: '#dc2626' }}>
               *
             </span>
           )}
@@ -76,14 +76,14 @@ export default function Textarea({
       <textarea
         id={textareaId}
         className={[
-          "hcc-textarea",
+          'hcc-textarea',
           `hcc-textarea--${size}`,
-          fullWidth ? "hcc-textarea--full" : "",
+          fullWidth ? 'hcc-textarea--full' : '',
           textareaStateClass,
           className,
         ]
           .filter(Boolean)
-          .join(" ")}
+          .join(' ')}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
@@ -97,16 +97,16 @@ export default function Textarea({
         maxLength={maxLength}
         {...rest}
       />
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div>
           {help && !error && (
-            <div id={textareaId + "-help"} className="hcc-textarea-help">
+            <div id={textareaId + '-help'} className="hcc-textarea-help">
               {help}
             </div>
           )}
           {error && (
             <div
-              id={textareaId + "-error"}
+              id={textareaId + '-error'}
               className="hcc-textarea-error"
               role="alert"
             >
@@ -114,17 +114,17 @@ export default function Textarea({
             </div>
           )}
           {success && !error && (
-            <div id={textareaId + "-success"} className="hcc-textarea-success">
+            <div id={textareaId + '-success'} className="hcc-textarea-success">
               {success}
             </div>
           )}
         </div>
         {showCount && maxLength && (
-          <div id={textareaId + "-counter"} className="hcc-textarea-counter">
+          <div id={textareaId + '-counter'} className="hcc-textarea-counter">
             {value.length} / {maxLength}
           </div>
         )}
       </div>
     </div>
-  );
+  )
 }
