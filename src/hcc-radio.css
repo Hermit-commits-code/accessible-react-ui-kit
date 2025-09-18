@@ -8,7 +8,7 @@
 .hcc-radio-label-group {
   font-weight: 500;
   font-size: 1rem;
-  color: #334155;
+  color: var(--ui-radio-label-color, #334155);
   margin-bottom: 0.15em;
 }
 
@@ -22,9 +22,9 @@
   appearance: none;
   width: 1.14em;
   height: 1.14em;
-  border: 1.5px solid #cbd5e1;
+  border: 1.5px solid var(--ui-radio-border, #cbd5e1);
   border-radius: 50%;
-  background: #fff;
+  background: var(--ui-radio-bg, #fff);
   margin: 0;
   outline: none;
   position: relative;
@@ -37,12 +37,12 @@
 }
 
 .hcc-radio:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px #2563eb33;
+  border-color: var(--ui-radio-border-focus, #2563eb);
+  box-shadow: 0 0 0 2px var(--ui-radio-focus-ring, #2563eb33);
 }
 .hcc-radio:checked {
-  border-color: #2563eb;
-  background: #2563eb;
+  border-color: var(--ui-radio-border-checked, #2563eb);
+  background: var(--ui-radio-bg-checked, #2563eb);
 }
 .hcc-radio:checked::after {
   content: "";
@@ -53,37 +53,37 @@
   width: 0.42em;
   height: 0.42em;
   border-radius: 50%;
-  background: #fff;
+  background: var(--ui-radio-dot, #fff);
 }
 
 .hcc-radio--error {
-  border-color: #dc2626;
-  background: #fef2f2;
+  border-color: var(--ui-radio-border-error, #dc2626);
+  background: var(--ui-radio-bg-error, #fef2f2);
 }
 .hcc-radio--error:checked {
-  background: #dc2626;
-  border-color: #dc2626;
+  background: var(--ui-radio-bg-error-checked, #dc2626);
+  border-color: var(--ui-radio-border-error, #dc2626);
 }
 .hcc-radio--success {
-  border-color: #16a34a;
-  background: #f0fdf4;
+  border-color: var(--ui-radio-border-success, #16a34a);
+  background: var(--ui-radio-bg-success, #f0fdf4);
 }
 .hcc-radio--success:checked {
-  background: #16a34a;
-  border-color: #16a34a;
+  background: var(--ui-radio-bg-success-checked, #16a34a);
+  border-color: var(--ui-radio-border-success, #16a34a);
 }
 
 .hcc-radio[disabled],
 .hcc-radio[aria-disabled="true"] {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #94a3b8;
+  background: var(--ui-radio-bg-disabled, #f1f5f9);
+  border-color: var(--ui-radio-border-disabled, #cbd5e1);
+  color: var(--ui-radio-color-disabled, #94a3b8);
   cursor: not-allowed;
   opacity: 0.7;
 }
 .hcc-radio[readonly] {
-  background: #f8fafc;
-  color: #64748b;
+  background: var(--ui-radio-bg-readonly, #f8fafc);
+  color: var(--ui-radio-color-readonly, #64748b);
   pointer-events: none;
 }
 
@@ -97,7 +97,7 @@
 }
 .hcc-radio-label {
   user-select: none;
-  color: #334155;
+  color: var(--ui-radio-label-color, #334155);
   font-size: 1rem;
   cursor: pointer;
 }
@@ -110,16 +110,16 @@
 
 .hcc-radio-help {
   font-size: 0.92rem;
-  color: #64748b;
+  color: var(--ui-radio-help-color, #64748b);
   margin-top: 2px;
 }
 .hcc-radio-error {
   font-size: 0.92rem;
-  color: #dc2626;
+  color: var(--ui-radio-color-error, #dc2626);
   margin-top: 2px;
 }
 .hcc-radio-success {
   font-size: 0.92rem;
-  color: #16a34a;
+  color: var(--ui-radio-color-success, #16a34a);
   margin-top: 2px;
 }

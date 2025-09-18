@@ -3,8 +3,8 @@
   width: 1.85em;
   height: 1.85em;
   vertical-align: middle;
-  border: 3px solid #cbd5e1;
-  border-top: 3px solid #2563eb;
+  border: 3px solid var(--ui-spinner-border, #cbd5e1);
+  border-top: 3px solid var(--ui-spinner-border-top, #2563eb);
   border-radius: 50%;
   animation: hcc-spin 0.7s linear infinite;
 }
@@ -21,12 +21,12 @@
 }
 
 .hcc-spinner--muted {
-  border-top-color: #64748b;
-  border-color: #e5e7eb;
+  border-top-color: var(--ui-spinner-border-top-muted, #64748b);
+  border-color: var(--ui-spinner-border-muted, #e5e7eb);
 }
 .hcc-spinner--danger {
-  border-top-color: #dc2626;
-  border-color: #fca5a5;
+  border-top-color: var(--ui-spinner-border-top-danger, #dc2626);
+  border-color: var(--ui-spinner-border-danger, #fca5a5);
 }
 
 @keyframes hcc-spin {

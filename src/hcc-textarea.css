@@ -8,17 +8,17 @@
 .hcc-textarea-label {
   font-weight: 500;
   font-size: 1rem;
-  color: #334155;
+  color: var(--ui-textarea-label-color, #334155);
   margin-bottom: 0.15em;
 }
 
 .hcc-textarea {
   font-size: 1rem;
-  padding: 0.55em 1em;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 0.375em;
-  background: #fff;
-  color: #1e293b;
+  padding: var(--ui-textarea-padding, 0.55em 1em);
+  border: 1.5px solid var(--ui-textarea-border, #cbd5e1);
+  border-radius: var(--ui-textarea-radius, 0.375em);
+  background: var(--ui-textarea-bg, #fff);
+  color: var(--ui-textarea-color, #1e293b);
   outline: none;
   transition:
     border 0.15s,
@@ -30,51 +30,51 @@
 }
 
 .hcc-textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px #2563eb33;
+  border-color: var(--ui-textarea-border-focus, #2563eb);
+  box-shadow: 0 0 0 2px var(--ui-textarea-focus-ring, #2563eb33);
 }
 
 .hcc-textarea[disabled],
 .hcc-textarea[aria-disabled="true"] {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #94a3b8;
+  background: var(--ui-textarea-bg-disabled, #f1f5f9);
+  border-color: var(--ui-textarea-border-disabled, #cbd5e1);
+  color: var(--ui-textarea-color-disabled, #94a3b8);
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .hcc-textarea[readonly] {
-  background: #f8fafc;
-  color: #64748b;
+  background: var(--ui-textarea-bg-readonly, #f8fafc);
+  color: var(--ui-textarea-color-readonly, #64748b);
 }
 
 .hcc-textarea--error {
-  border-color: #dc2626;
-  background: #fef2f2;
-  color: #dc2626;
+  border-color: var(--ui-textarea-border-error, #dc2626);
+  background: var(--ui-textarea-bg-error, #fef2f2);
+  color: var(--ui-textarea-color-error, #dc2626);
 }
 .hcc-textarea--error:focus {
-  border-color: #dc2626;
-  box-shadow: 0 0 0 2px #dc262644;
+  border-color: var(--ui-textarea-border-error, #dc2626);
+  box-shadow: 0 0 0 2px var(--ui-textarea-error-focus-ring, #dc262644);
 }
 .hcc-textarea--success {
-  border-color: #16a34a;
-  background: #f0fdf4;
-  color: #166534;
+  border-color: var(--ui-textarea-border-success, #16a34a);
+  background: var(--ui-textarea-bg-success, #f0fdf4);
+  color: var(--ui-textarea-color-success, #166534);
 }
 .hcc-textarea--success:focus {
-  border-color: #16a34a;
-  box-shadow: 0 0 0 2px #16a34a33;
+  border-color: var(--ui-textarea-border-success, #16a34a);
+  box-shadow: 0 0 0 2px var(--ui-textarea-success-focus-ring, #16a34a33);
 }
 
 .hcc-textarea--sm {
   font-size: 0.92rem;
-  padding: 0.35em 0.85em;
+  padding: var(--ui-textarea-padding-sm, 0.35em 0.85em);
   min-height: 3em;
 }
 .hcc-textarea--lg {
   font-size: 1.13rem;
-  padding: 0.7em 1.3em;
+  padding: var(--ui-textarea-padding-lg, 0.7em 1.3em);
   min-height: 6em;
 }
 
@@ -84,24 +84,24 @@
 
 .hcc-textarea-help {
   font-size: 0.92rem;
-  color: #64748b;
+  color: var(--ui-textarea-help-color, #64748b);
   margin-top: 2px;
 }
 
 .hcc-textarea-error {
   font-size: 0.92rem;
-  color: #dc2626;
+  color: var(--ui-textarea-color-error, #dc2626);
   margin-top: 2px;
 }
 .hcc-textarea-success {
   font-size: 0.92rem;
-  color: #16a34a;
+  color: var(--ui-textarea-color-success, #16a34a);
   margin-top: 2px;
 }
 
 .hcc-textarea-counter {
   font-size: 0.92rem;
-  color: #64748b;
+  color: var(--ui-textarea-counter-color, #64748b);
   align-self: flex-end;
   margin-top: 2px;
 }

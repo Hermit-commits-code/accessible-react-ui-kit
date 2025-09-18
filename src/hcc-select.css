@@ -8,7 +8,7 @@
 .hcc-select-label {
   font-weight: 500;
   font-size: 1rem;
-  color: #334155;
+  color: var(--ui-select-label-color, #334155);
   margin-bottom: 0.15em;
 }
 
@@ -19,11 +19,11 @@
 
 .hcc-select {
   font-size: 1rem;
-  padding: 0.55em 2.1em 0.55em 1em;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 0.375em;
-  background: #fff;
-  color: #1e293b;
+  padding: var(--ui-select-padding, 0.55em 2.1em 0.55em 1em);
+  border: 1.5px solid var(--ui-select-border, #cbd5e1);
+  border-radius: var(--ui-select-radius, 0.375em);
+  background: var(--ui-select-bg, #fff);
+  color: var(--ui-select-color, #1e293b);
   outline: none;
   transition:
     border 0.15s,
@@ -35,51 +35,51 @@
 }
 
 .hcc-select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px #2563eb33;
+  border-color: var(--ui-select-border-focus, #2563eb);
+  box-shadow: 0 0 0 2px var(--ui-select-focus-ring, #2563eb33);
 }
 
 .hcc-select[disabled],
 .hcc-select[aria-disabled="true"] {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #94a3b8;
+  background: var(--ui-select-bg-disabled, #f1f5f9);
+  border-color: var(--ui-select-border-disabled, #cbd5e1);
+  color: var(--ui-select-color-disabled, #94a3b8);
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .hcc-select[readonly] {
-  background: #f8fafc;
-  color: #64748b;
+  background: var(--ui-select-bg-readonly, #f8fafc);
+  color: var(--ui-select-color-readonly, #64748b);
   pointer-events: none;
 }
 
 .hcc-select--error {
-  border-color: #dc2626;
-  background: #fef2f2;
-  color: #dc2626;
+  border-color: var(--ui-select-border-error, #dc2626);
+  background: var(--ui-select-bg-error, #fef2f2);
+  color: var(--ui-select-color-error, #dc2626);
 }
 .hcc-select--error:focus {
-  border-color: #dc2626;
-  box-shadow: 0 0 0 2px #dc262644;
+  border-color: var(--ui-select-border-error, #dc2626);
+  box-shadow: 0 0 0 2px var(--ui-select-error-focus-ring, #dc262644);
 }
 .hcc-select--success {
-  border-color: #16a34a;
-  background: #f0fdf4;
-  color: #166534;
+  border-color: var(--ui-select-border-success, #16a34a);
+  background: var(--ui-select-bg-success, #f0fdf4);
+  color: var(--ui-select-color-success, #166534);
 }
 .hcc-select--success:focus {
-  border-color: #16a34a;
-  box-shadow: 0 0 0 2px #16a34a33;
+  border-color: var(--ui-select-border-success, #16a34a);
+  box-shadow: 0 0 0 2px var(--ui-select-success-focus-ring, #16a34a33);
 }
 
 .hcc-select--sm {
   font-size: 0.92rem;
-  padding: 0.35em 2em 0.35em 0.85em;
+  padding: var(--ui-select-padding-sm, 0.35em 2em 0.35em 0.85em);
 }
 .hcc-select--lg {
   font-size: 1.13rem;
-  padding: 0.7em 2.3em 0.7em 1.3em;
+  padding: var(--ui-select-padding-lg, 0.7em 2.3em 0.7em 1.3em);
 }
 
 .hcc-select--full {
@@ -93,23 +93,23 @@
   pointer-events: none;
   width: 1em;
   height: 1em;
-  fill: #64748b;
+  fill: var(--ui-select-arrow-color, #64748b);
   transform: translateY(-50%);
 }
 
 .hcc-select-help {
   font-size: 0.92rem;
-  color: #64748b;
+  color: var(--ui-select-help-color, #64748b);
   margin-top: 2px;
 }
 
 .hcc-select-error {
   font-size: 0.92rem;
-  color: #dc2626;
+  color: var(--ui-select-color-error, #dc2626);
   margin-top: 2px;
 }
 .hcc-select-success {
   font-size: 0.92rem;
-  color: #16a34a;
+  color: var(--ui-select-color-success, #16a34a);
   margin-top: 2px;
 }
