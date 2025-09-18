@@ -1,6 +1,7 @@
 # UI Component Library
 
 A modern, accessible, and customizable React component library for rapid MVP development.
+**[→ Accessibility Audit](ACCESSIBILITY_AUDIT.md)**
 
 [![npm version](https://img.shields.io/npm/v/your-ui-library.svg)](https://www.npmjs.com/package/your-ui-library)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
