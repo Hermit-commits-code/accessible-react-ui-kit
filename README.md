@@ -69,9 +69,9 @@ You can also scope them to a class or selector for alternate themes.
 ## Installation
 
 ```sh
-npm install your-ui-library
+npm install accessible-react-ui-kit
 # or
-yarn add your-ui-library
+yarn add accessible-react-ui-kit
 ```
 
 ---
@@ -90,10 +90,10 @@ import {
   Card,
   Modal,
   Spinner,
-} from "your-ui-library";
+} from 'your-ui-library'
 
 function App() {
-  return <Button variant="primary">Hello World</Button>;
+  return <Button variant="primary">Hello World</Button>
 }
 ```
 
@@ -240,9 +240,9 @@ A modern, accessible select field with size, state, placeholder, and help/error 
   label="Favorite Fruit"
   id="fruit"
   options={[
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Cherry", value: "cherry" },
+    { label: 'Apple', value: 'apple' },
+    { label: 'Banana', value: 'banana' },
+    { label: 'Cherry', value: 'cherry' },
   ]}
   value={fruit}
   onChange={handleFruitChange}
@@ -335,9 +335,9 @@ A modern, accessible radio button group with size, state, help/error message sup
   label="Favorite Color"
   name="color"
   options={[
-    { label: "Red", value: "red" },
-    { label: "Green", value: "green" },
-    { label: "Blue", value: "blue", disabled: true },
+    { label: 'Red', value: 'red' },
+    { label: 'Green', value: 'green' },
+    { label: 'Blue', value: 'blue', disabled: true },
   ]}
   value={selectedColor}
   onChange={handleColorChange}
@@ -475,16 +475,16 @@ A simple animated indicator for loading states.
 A dialog overlay for focused content or actions.
 
 ```jsx
-const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(false)
 
-<Modal
+;<Modal
   open={open}
   onClose={() => setOpen(false)}
   header="Dialog Title"
   footer={<Button onClick={() => setOpen(false)}>Close</Button>}
 >
   <p>This is the modal’s content.</p>
-</Modal>;
+</Modal>
 ```
 
 | Prop          | Type             | Default | Description                  |

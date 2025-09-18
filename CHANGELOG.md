@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-
 ## [1.1.1] - 2025-09-18
+
 ### Fixed
+
 - Updated ESLint configuration to fully support JSX and React syntax
 - Added @babel/eslint-parser and @babel/preset-react for proper JSX parsing
 - Refactored eslint.config.js to use ES module imports and dynamic parser loading
