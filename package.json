@@ -1,10 +1,11 @@
 {
   "name": "accessible-react-ui-kit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Accessible-first, timeless UI blocks for React projects.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
@@ -39,8 +40,13 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.28.4",
+    "@babel/preset-react": "^7.27.1",
+    "@eslint/js": "^9.35.0",
     "@vitejs/plugin-react": "^5.0.2",
     "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
     "prettier": "^3.6.2",
     "vite": "^7.1.5"
   }
