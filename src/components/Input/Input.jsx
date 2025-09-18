@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-input.css";
+import React from 'react'
+import '../hcc-input.css'
 
 /**
  * Input component
@@ -30,39 +30,37 @@ export default function Input({
   required = false,
   disabled = false,
   readOnly = false,
-  size = "md",
+  size = 'md',
   fullWidth = false,
-  error = "",
-  success = "",
-  help = "",
-  className = "",
+  error = '',
+  success = '',
+  help = '',
+  className = '',
   ...rest
 }) {
   const inputId =
     id ||
-    (label
-      ? `hcc-input-${Math.random().toString(36).slice(2, 10)}`
-      : undefined);
+    (label ? `hcc-input-${Math.random().toString(36).slice(2, 10)}` : undefined)
   const describedBy =
     [
-      error ? `${inputId}-error` : "",
-      success ? `${inputId}-success` : "",
-      help ? `${inputId}-help` : "",
+      error ? `${inputId}-error` : '',
+      success ? `${inputId}-success` : '',
+      help ? `${inputId}-help` : '',
     ]
       .filter(Boolean)
-      .join(" ") || undefined;
+      .join(' ') || undefined
 
-  let inputStateClass = "";
-  if (error) inputStateClass = "hcc-input--error";
-  else if (success) inputStateClass = "hcc-input--success";
+  let inputStateClass = ''
+  if (error) inputStateClass = 'hcc-input--error'
+  else if (success) inputStateClass = 'hcc-input--success'
 
   return (
-    <div className="hcc-input-group">
+    <div className={['hcc-input-group', className].filter(Boolean).join(' ')}>
       {label && (
         <label htmlFor={inputId} className="hcc-input-label">
-          {label}{" "}
+          {label}{' '}
           {required && (
-            <span aria-hidden="true" style={{ color: "#dc2626" }}>
+            <span aria-hidden="true" style={{ color: '#dc2626' }}>
               *
             </span>
           )}
@@ -71,14 +69,13 @@ export default function Input({
       <input
         id={inputId}
         className={[
-          "hcc-input",
+          'hcc-input',
           `hcc-input--${size}`,
-          fullWidth ? "hcc-input--full" : "",
+          fullWidth ? 'hcc-input--full' : '',
           inputStateClass,
-          className,
         ]
           .filter(Boolean)
-          .join(" ")}
+          .join(' ')}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
@@ -91,21 +88,21 @@ export default function Input({
         aria-describedby={describedBy}
         {...rest}
       />
-      {help && !error && (
-        <div id={inputId + "-help"} className="hcc-input-help">
+      {help && (
+        <div id={inputId + '-help'} className="hcc-input-help">
           {help}
         </div>
       )}
       {error && (
-        <div id={inputId + "-error"} className="hcc-input-error" role="alert">
+        <div id={inputId + '-error'} className="hcc-input-error" role="alert">
           {error}
         </div>
       )}
       {success && !error && (
-        <div id={inputId + "-success"} className="hcc-input-success">
+        <div id={inputId + '-success'} className="hcc-input-success">
           {success}
         </div>
       )}
     </div>
-  );
+  )
 }

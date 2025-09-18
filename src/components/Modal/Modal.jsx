@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import "../hcc-modal.css";
+import React, { useEffect, useRef } from 'react'
+import '../hcc-modal.css'
 
 /**
  * Modal component (dialog)
@@ -22,52 +22,57 @@ export default function Modal({
   header,
   footer,
   children,
-  size = "md",
+  size = 'md',
   center = true,
   closeButton = true,
-  className = "",
+  className = '',
   ...rest
 }) {
-  const ref = useRef();
+  const ref = useRef()
 
   // Trap focus
   useEffect(() => {
-    if (!open) return;
-    const prev = document.activeElement;
-    ref.current?.focus();
+    if (!open) return
+    const prev = document.activeElement
+    ref.current?.focus()
     function handleKey(e) {
-      if (e.key === "Escape") onClose?.();
+      if (e.key === 'Escape') onClose?.()
     }
-    window.addEventListener("keydown", handleKey);
+    window.addEventListener('keydown', handleKey)
     return () => {
-      window.removeEventListener("keydown", handleKey);
-      prev?.focus();
-    };
-  }, [open, onClose]);
+      window.removeEventListener('keydown', handleKey)
+      prev?.focus()
+    }
+  }, [open, onClose])
 
-  if (!open) return null;
+  if (!open) return null
 
+  // For accessibility: use header as aria-label or aria-labelledby
+  const labelledById = header ? 'hcc-modal-header' : undefined
   return (
     <div
-      className={["hcc-modal-backdrop", center && "hcc-modal--center"]
+      className={['hcc-modal-backdrop', center && 'hcc-modal--center']
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
       tabIndex={-1}
       aria-modal="true"
       role="dialog"
+      {...(header
+        ? { 'aria-labelledby': labelledById }
+        : { 'aria-label': 'Modal dialog' })}
       onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose?.();
+        if (e.target === e.currentTarget) onClose?.()
       }}
     >
       <div
         ref={ref}
         className={[
-          "hcc-modal",
-          size !== "md" && `hcc-modal--${size}`,
+          'hcc-modal',
+          size !== 'md' && `hcc-modal--${size}`,
           className,
         ]
           .filter(Boolean)
-          .join(" ")}
+          .join(' ')}
         tabIndex={0}
         {...rest}
       >
@@ -81,10 +86,14 @@ export default function Modal({
             &times;
           </button>
         )}
-        {header && <div className="hcc-modal-header">{header}</div>}
+        {header && (
+          <div className="hcc-modal-header" id="hcc-modal-header">
+            {header}
+          </div>
+        )}
         <div className="hcc-modal-body">{children}</div>
         {footer && <div className="hcc-modal-footer">{footer}</div>}
       </div>
     </div>
-  );
+  )
 }

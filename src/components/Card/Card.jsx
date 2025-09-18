@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-card.css";
+import React from 'react'
+import '../hcc-card.css'
 
 /**
  * Card component
@@ -22,29 +22,30 @@ export default function Card({
   children,
   shadow = false,
   borderless = false,
-  size = "md",
+  size = 'md',
   center = false,
-  as: El = "section",
-  className = "",
+  as: El = 'section',
+  className = '',
   ...rest
 }) {
   return (
     <El
+      data-testid="card-root"
       className={[
-        "hcc-card",
-        shadow && "hcc-card--shadow",
-        borderless && "hcc-card--borderless",
-        size !== "md" && `hcc-card--${size}`,
-        center && "hcc-card--center",
+        'hcc-card',
+        shadow && 'hcc-card--shadow',
+        borderless && 'hcc-card--borderless',
+        size !== 'md' && `hcc-card--${size}`,
+        center && 'hcc-card--center',
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
       {...rest}
     >
       {header && <div className="hcc-card-header">{header}</div>}
       <div className="hcc-card-body">{children}</div>
       {footer && <div className="hcc-card-footer">{footer}</div>}
     </El>
-  );
+  )
 }

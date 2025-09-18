@@ -39,9 +39,11 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 ## Features
 
 - **MVP-first:** Fast, production-ready React components for quick prototyping and real apps.
-- **Accessible:** WCAG-compliant, keyboard-friendly, screen-reader support.
+- **Accessible:** WCAG-compliant, keyboard-friendly, screen-reader support. All components are tested with jest-axe and React Testing Library.
 - **Customizable:** Theme everything via CSS variables or utility classes.
-- **Documented:** Clear prop tables and usage examples.
+- **Documented:** Clear prop tables and usage examples. Per-component docs for every component.
+- **Robust Help Text:** All components support always-rendered help text for accessibility.
+- **Custom className:** All components accept a custom className on the outermost element.
 - **TypeScript Friendly:** Written in/compatible with TypeScript (coming soon).
 - **Lightweight:** Minimal dependencies, tree-shakable.
 - **Composable:** Easy to integrate and extend.
@@ -402,7 +404,7 @@ A visually distinct alert box for feedback messages, warnings, errors, and more.
 
 **Accessibility:**
 
-- Uses `role="alert"` or `role="status"` and `aria-live` for screen reader announcements
+- Uses `role="alert"` (for error/warning) or `role="status"` (for info/success) and `aria-live` for screen reader announcements, matching the `variant` prop.
 - Dismiss button is accessible and focusable
 
 ---
@@ -557,8 +559,7 @@ Try all components in the included [`main.jsx`](./src/main.jsx) demo.
 
 ## Testing
 
-Component functionality is manually verified in [`main.jsx`](./src/main.jsx) during development.  
-Automated tests (using Jest and React Testing Library) are planned for future releases.
+All components are covered by professional, accessibility-first automated tests (Jest, React Testing Library, jest-axe). Every component robustly supports help text and custom className props, and all accessibility features are verified.
 
 To try the components in a real project, install the package from npm and import as shown above.
 
@@ -573,7 +574,11 @@ Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and our [Code o
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](./LICENSE.md).
+
+Copyright (c) 2025 Hermit-commits-code
+
+See the LICENSE.md file for full license text.
 
 ---
 

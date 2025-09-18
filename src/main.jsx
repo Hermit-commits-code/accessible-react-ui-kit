@@ -1,152 +1,152 @@
-import "./theme.css";
-import "./index.css";
-import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import Card from "./components/Card";
-import Input from "./components/Input";
-import Modal from "./components/Modal";
-import Spinner from "./components/Spinner";
-import Textarea from "./components/Textarea";
-import Select from "./components/Select";
-import Checkbox from "./components/Checkbox";
-import RadioGroup from "./components/RadioGroup";
+import './theme.css'
+import './index.css'
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import Alert from './components/Alert'
+import Button from './components/Button'
+import Card from './components/Card'
+import Input from './components/Input'
+import Modal from './components/Modal'
+import Spinner from './components/Spinner'
+import Textarea from './components/Textarea'
+import Select from './components/Select'
+import Checkbox from './components/Checkbox'
+import RadioGroup from './components/RadioGroup'
 
 function App() {
   // Form/field states
-  const [username, setUsername] = useState("");
-  const [usernameError, setUsernameError] = useState("");
-  const [usernameSuccess, setUsernameSuccess] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [bio, setBio] = useState("");
-  const [bioError, setBioError] = useState("");
-  const [fruit, setFruit] = useState("");
-  const [fruitError, setFruitError] = useState("");
-  const [color, setColor] = useState("");
-  const [colorError, setColorError] = useState("");
-  const [checked, setChecked] = useState(false);
-  const [checkError, setCheckError] = useState("");
-  const [smallChecked, setSmallChecked] = useState(false);
-  const [largeChecked, setLargeChecked] = useState(false);
-  const [selectedColor, setSelectedColor] = useState("");
-  const [smallRadio, setSmallRadio] = useState("");
-  const [open, setOpen] = useState(false);
-  const [largeRadio, setLargeRadio] = useState("");
+  const [username, setUsername] = useState('')
+  const [usernameError, setUsernameError] = useState('')
+  const [usernameSuccess, setUsernameSuccess] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [bio, setBio] = useState('')
+  const [bioError, setBioError] = useState('')
+  const [fruit, setFruit] = useState('')
+  const [fruitError, setFruitError] = useState('')
+  const [color, setColor] = useState('')
+  const [colorError, setColorError] = useState('')
+  const [checked, setChecked] = useState(false)
+  const [checkError, setCheckError] = useState('')
+  const [smallChecked, setSmallChecked] = useState(false)
+  const [largeChecked, setLargeChecked] = useState(false)
+  const [selectedColor, setSelectedColor] = useState('')
+  const [smallRadio, setSmallRadio] = useState('')
+  const [open, setOpen] = useState(false)
+  const [largeRadio, setLargeRadio] = useState('')
 
   function handleColorChange(e) {
-    setSelectedColor(e.target.value);
-    setColorError(e.target.value ? "" : "Pick a color.");
+    setSelectedColor(e.target.value)
+    setColorError(e.target.value ? '' : 'Pick a color.')
   }
   function handleSmallRadioChange(e) {
-    setSmallRadio(e.target.value);
+    setSmallRadio(e.target.value)
   }
   function handleLargeRadioChange(e) {
-    setLargeRadio(e.target.value);
+    setLargeRadio(e.target.value)
   }
 
   function handleCheckChange(e) {
-    setChecked(e.target.checked);
-    setCheckError(e.target.checked ? "" : "You must agree to continue");
+    setChecked(e.target.checked)
+    setCheckError(e.target.checked ? '' : 'You must agree to continue')
   }
   function handleSmallCheckChange(e) {
-    setSmallChecked(e.target.checked);
+    setSmallChecked(e.target.checked)
   }
   function handleLargeCheckChange(e) {
-    setLargeChecked(e.target.checked);
+    setLargeChecked(e.target.checked)
   }
   const fruitOptions = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Cherry", value: "cherry" },
-  ];
+    { label: 'Apple', value: 'apple' },
+    { label: 'Banana', value: 'banana' },
+    { label: 'Cherry', value: 'cherry' },
+  ]
   const colorOptions = [
-    { label: "Red", value: "red" },
-    { label: "Green", value: "green" },
-    { label: "Blue", value: "blue" },
-  ];
+    { label: 'Red', value: 'red' },
+    { label: 'Green', value: 'green' },
+    { label: 'Blue', value: 'blue' },
+  ]
 
   // Handlers
   const handleUsernameChange = (e) => {
-    const val = e.target.value;
-    setUsername(val);
+    const val = e.target.value
+    setUsername(val)
     if (!val) {
-      setUsernameError("This field is required.");
-      setUsernameSuccess("");
+      setUsernameError('This field is required.')
+      setUsernameSuccess('')
     } else if (val.length < 4) {
-      setUsernameError("Username must be at least 4 characters.");
-      setUsernameSuccess("");
+      setUsernameError('Username must be at least 4 characters.')
+      setUsernameSuccess('')
     } else {
-      setUsernameError("");
-      setUsernameSuccess("Looks good!");
+      setUsernameError('')
+      setUsernameSuccess('Looks good!')
     }
-  };
+  }
 
   const handleValidateUsername = () => {
     if (!username) {
-      setUsernameError("This field is required.");
-      setUsernameSuccess("");
+      setUsernameError('This field is required.')
+      setUsernameSuccess('')
     } else if (username.length < 4) {
-      setUsernameError("Username must be at least 4 characters.");
-      setUsernameSuccess("");
+      setUsernameError('Username must be at least 4 characters.')
+      setUsernameSuccess('')
     } else {
-      setUsernameError("");
-      setUsernameSuccess("Looks good!");
+      setUsernameError('')
+      setUsernameSuccess('Looks good!')
     }
-  };
+  }
 
   const handleBioChange = (e) => {
-    setBio(e.target.value);
+    setBio(e.target.value)
     setBioError(
-      e.target.value.length > 150 ? "Maximum 150 characters allowed" : ""
-    );
-  };
+      e.target.value.length > 150 ? 'Maximum 150 characters allowed' : '',
+    )
+  }
 
   const handleFruitChange = (e) => {
-    setFruit(e.target.value);
-    setFruitError("");
-  };
+    setFruit(e.target.value)
+    setFruitError('')
+  }
 
   // Demo submit (optional, for polish)
   const handleSubmit = (e) => {
-    e.preventDefault();
-    let isValid = true;
+    e.preventDefault()
+    let isValid = true
 
     if (!username) {
-      setUsernameError("This field is required.");
-      setUsernameSuccess("");
-      isValid = false;
+      setUsernameError('This field is required.')
+      setUsernameSuccess('')
+      isValid = false
     } else if (username.length < 4) {
-      setUsernameError("Username must be at least 4 characters.");
-      setUsernameSuccess("");
-      isValid = false;
+      setUsernameError('Username must be at least 4 characters.')
+      setUsernameSuccess('')
+      isValid = false
     } else {
-      setUsernameError("");
-      setUsernameSuccess("Looks good!");
+      setUsernameError('')
+      setUsernameSuccess('Looks good!')
     }
     if (!bio) {
-      setBioError("Please enter your bio.");
-      isValid = false;
+      setBioError('Please enter your bio.')
+      isValid = false
     } else if (bio.length > 150) {
-      setBioError("Maximum 150 characters allowed");
-      isValid = false;
+      setBioError('Maximum 150 characters allowed')
+      isValid = false
     }
     if (!fruit) {
-      setFruitError("Please select a fruit");
-      isValid = false;
+      setFruitError('Please select a fruit')
+      isValid = false
     }
     if (!checked) {
-      setCheckboxError("You must agree to continue");
-      isValid = false;
+      setCheckboxError('You must agree to continue')
+      isValid = false
     }
     if (!color) {
-      setColorError("Please select a color");
-      isValid = false;
+      setColorError('Please select a color')
+      isValid = false
     }
     if (isValid) {
-      alert("Form submitted! 🚀");
+      alert('Form submitted! 🚀')
     }
-  };
+  }
 
   return (
     <div className="app-container">
@@ -159,10 +159,10 @@ function App() {
 
         <div
           style={{
-            display: "flex",
-            gap: "1em",
-            flexWrap: "wrap",
-            marginBottom: "1em",
+            display: 'flex',
+            gap: '1em',
+            flexWrap: 'wrap',
+            marginBottom: '1em',
           }}
         >
           <Button>Primary</Button>
@@ -175,10 +175,10 @@ function App() {
 
         <div
           style={{
-            display: "flex",
-            gap: "1em",
-            flexWrap: "wrap",
-            marginBottom: "1em",
+            display: 'flex',
+            gap: '1em',
+            flexWrap: 'wrap',
+            marginBottom: '1em',
           }}
         >
           <Button size="sm">Small</Button>
@@ -189,10 +189,10 @@ function App() {
 
         <div
           style={{
-            display: "flex",
-            gap: "1em",
-            flexWrap: "wrap",
-            marginBottom: "1em",
+            display: 'flex',
+            gap: '1em',
+            flexWrap: 'wrap',
+            marginBottom: '1em',
           }}
         >
           <Button
@@ -230,8 +230,8 @@ function App() {
         </div>
       </section>
 
-      <section style={{ margin: "2rem 0" }}>
-        <h2 style={{ marginBottom: "1rem" }}>Alert Components</h2>
+      <section style={{ margin: '2rem 0' }}>
+        <h2 style={{ marginBottom: '1rem' }}>Alert Components</h2>
         <Alert variant="info" title="Info!">
           This is an informational alert.
         </Alert>
@@ -316,8 +316,8 @@ function App() {
           error={bioError}
           success={
             !bioError && bio.length > 0 && bio.length <= 150
-              ? "Looks good!"
-              : ""
+              ? 'Looks good!'
+              : ''
           }
           maxLength={150}
           showCount
@@ -367,9 +367,9 @@ function App() {
           label="Favorite Fruit"
           id="fruit-demo"
           options={[
-            { label: "Apple", value: "apple" },
-            { label: "Banana", value: "banana" },
-            { label: "Cherry", value: "cherry" },
+            { label: 'Apple', value: 'apple' },
+            { label: 'Banana', value: 'banana' },
+            { label: 'Cherry', value: 'cherry' },
           ]}
           value={fruit}
           onChange={handleFruitChange}
@@ -378,13 +378,13 @@ function App() {
           fullWidth
           help="Pick your favorite fruit"
           error={fruitError}
-          success={!fruitError && fruit ? "Great choice!" : ""}
+          success={!fruitError && fruit ? 'Great choice!' : ''}
           placeholder="Choose a fruit"
         />
 
         <Select
           label="Disabled"
-          options={[{ label: "Unavailable", value: "unavailable" }]}
+          options={[{ label: 'Unavailable', value: 'unavailable' }]}
           value="unavailable"
           disabled
           size="md"
@@ -395,7 +395,7 @@ function App() {
 
         <Select
           label="Read Only"
-          options={[{ label: "Locked", value: "locked" }]}
+          options={[{ label: 'Locked', value: 'locked' }]}
           value="locked"
           readOnly
           size="md"
@@ -407,8 +407,8 @@ function App() {
         <Select
           label="Small Select"
           options={[
-            { label: "Small 1", value: "sm1" },
-            { label: "Small 2", value: "sm2" },
+            { label: 'Small 1', value: 'sm1' },
+            { label: 'Small 2', value: 'sm2' },
           ]}
           value=""
           size="sm"
@@ -419,8 +419,8 @@ function App() {
         <Select
           label="Large Select"
           options={[
-            { label: "Large 1", value: "lg1" },
-            { label: "Large 2", value: "lg2" },
+            { label: 'Large 1', value: 'lg1' },
+            { label: 'Large 2', value: 'lg2' },
           ]}
           value=""
           size="lg"
@@ -440,7 +440,7 @@ function App() {
           size="md"
           help="You must agree to continue"
           error={checkError}
-          success={!checkError && checked ? "Thank you!" : ""}
+          success={!checkError && checked ? 'Thank you!' : ''}
         />
 
         <Checkbox
@@ -482,9 +482,9 @@ function App() {
           label="Favorite Color"
           name="color"
           options={[
-            { label: "Red", value: "red" },
-            { label: "Green", value: "green" },
-            { label: "Blue", value: "blue", disabled: true },
+            { label: 'Red', value: 'red' },
+            { label: 'Green', value: 'green' },
+            { label: 'Blue', value: 'blue', disabled: true },
           ]}
           value={selectedColor}
           onChange={handleColorChange}
@@ -492,15 +492,15 @@ function App() {
           size="md"
           help="Pick your favorite color"
           error={colorError}
-          success={!colorError && selectedColor ? "Thanks for choosing!" : ""}
+          success={!colorError && selectedColor ? 'Thanks for choosing!' : ''}
         />
 
         <RadioGroup
           label="Small Radios"
           name="smallRadios"
           options={[
-            { label: "A", value: "a" },
-            { label: "B", value: "b" },
+            { label: 'A', value: 'a' },
+            { label: 'B', value: 'b' },
           ]}
           value={smallRadio}
           onChange={handleSmallRadioChange}
@@ -512,8 +512,8 @@ function App() {
           label="Large Radios"
           name="largeRadios"
           options={[
-            { label: "X", value: "x" },
-            { label: "Y", value: "y" },
+            { label: 'X', value: 'x' },
+            { label: 'Y', value: 'y' },
           ]}
           value={largeRadio}
           onChange={handleLargeRadioChange}
@@ -525,8 +525,8 @@ function App() {
           label="Disabled"
           name="disabledRadios"
           options={[
-            { label: "No", value: "no" },
-            { label: "Yes", value: "yes" },
+            { label: 'No', value: 'no' },
+            { label: 'Yes', value: 'yes' },
           ]}
           value="no"
           disabled
@@ -538,8 +538,8 @@ function App() {
           label="Read Only"
           name="readonlyRadios"
           options={[
-            { label: "Locked", value: "locked" },
-            { label: "Unlocked", value: "unlocked" },
+            { label: 'Locked', value: 'locked' },
+            { label: 'Unlocked', value: 'unlocked' },
           ]}
           value="locked"
           readOnly
@@ -588,10 +588,10 @@ function App() {
         <h2 className="section-title">Spinner</h2>
         <div
           style={{
-            display: "flex",
-            gap: "2em",
-            alignItems: "center",
-            flexWrap: "wrap",
+            display: 'flex',
+            gap: '2em',
+            alignItems: 'center',
+            flexWrap: 'wrap',
           }}
         >
           <Spinner />
@@ -601,7 +601,7 @@ function App() {
           <Spinner color="danger" />
           <Spinner size="lg" color="danger" ariaLabel="Deleting…" />
         </div>
-        <div style={{ marginTop: "1.5em" }}>
+        <div style={{ marginTop: '1.5em' }}>
           <Button loading leftIcon={<Spinner size="sm" />} variant="secondary">
             Loading with spinner
           </Button>
@@ -630,7 +630,7 @@ function App() {
         </Modal>
       </section>
     </div>
-  );
+  )
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)

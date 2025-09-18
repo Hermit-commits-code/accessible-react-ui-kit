@@ -1,5 +1,5 @@
-import React from "react";
-import "../hcc-checkbox.css";
+import React from 'react'
+import '../hcc-checkbox.css'
 
 /**
  * Checkbox component
@@ -27,42 +27,44 @@ export default function Checkbox({
   required = false,
   disabled = false,
   readOnly = false,
-  size = "md",
-  error = "",
-  success = "",
-  help = "",
-  className = "",
+  size = 'md',
+  error = '',
+  success = '',
+  help = '',
+  className = '',
   ...rest
 }) {
   const inputId =
     id ||
     (label
       ? `hcc-checkbox-${Math.random().toString(36).slice(2, 10)}`
-      : undefined);
+      : undefined)
   const describedBy =
     [
-      error ? `${inputId}-error` : "",
-      success ? `${inputId}-success` : "",
-      help ? `${inputId}-help` : "",
+      error ? `${inputId}-error` : '',
+      success ? `${inputId}-success` : '',
+      help ? `${inputId}-help` : '',
     ]
       .filter(Boolean)
-      .join(" ") || undefined;
+      .join(' ') || undefined
 
-  let checkStateClass = "";
-  if (error) checkStateClass = "hcc-checkbox--error";
-  else if (success) checkStateClass = "hcc-checkbox--success";
-  if (size === "sm") checkStateClass += " hcc-checkbox--sm";
-  if (size === "lg") checkStateClass += " hcc-checkbox--lg";
+  let checkStateClass = ''
+  if (error) checkStateClass = 'hcc-checkbox--error'
+  else if (success) checkStateClass = 'hcc-checkbox--success'
+  if (size === 'sm') checkStateClass += ' hcc-checkbox--sm'
+  if (size === 'lg') checkStateClass += ' hcc-checkbox--lg'
 
   return (
-    <div className="hcc-checkbox-group">
+    <div
+      className={['hcc-checkbox-group', className].filter(Boolean).join(' ')}
+    >
       <div className="hcc-checkbox-label-row">
         <input
           type="checkbox"
           id={inputId}
-          className={["hcc-checkbox", checkStateClass, className]
+          className={['hcc-checkbox', checkStateClass]
             .filter(Boolean)
-            .join(" ")}
+            .join(' ')}
           checked={checked}
           onChange={onChange}
           required={required}
@@ -76,23 +78,23 @@ export default function Checkbox({
         />
         {label && (
           <label htmlFor={inputId} className="hcc-checkbox-label">
-            {label}{" "}
+            {label}{' '}
             {required && (
-              <span aria-hidden="true" style={{ color: "#dc2626" }}>
+              <span aria-hidden="true" style={{ color: '#dc2626' }}>
                 *
               </span>
             )}
           </label>
         )}
       </div>
-      {help && !error && (
-        <div id={inputId + "-help"} className="hcc-checkbox-help">
+      {help && (
+        <div id={inputId + '-help'} className="hcc-checkbox-help">
           {help}
         </div>
       )}
       {error && (
         <div
-          id={inputId + "-error"}
+          id={inputId + '-error'}
           className="hcc-checkbox-error"
           role="alert"
         >
@@ -100,10 +102,10 @@ export default function Checkbox({
         </div>
       )}
       {success && !error && (
-        <div id={inputId + "-success"} className="hcc-checkbox-success">
+        <div id={inputId + '-success'} className="hcc-checkbox-success">
           {success}
         </div>
       )}
     </div>
-  );
+  )
 }
