@@ -2,36 +2,54 @@ import React from "react";
 import "../hcc-button.css";
 
 /**
- * Button Component
+ * Button component
  *
  * Props:
- * - children: Content inside the button
- * - variant: "primary" | "secondary" | "danger" (default: "primary")
- * - type: "button" | "submit" | "reset" (default: "button")
- * - className: string (optional, additional classes)
- * - ...rest: any other props (onClick, disabled, etc.)
+ * - children: ReactNode
+ * - variant: "primary" | "secondary" | "neutral" | "danger"
+ * - size: "sm" | "md" | "lg"
+ * - fullWidth: boolean
+ * - loading: boolean
+ * - disabled: boolean
+ * - type: "button" | "submit" | "reset"
+ * - className: string (optional, extra classes)
+ * - ...rest: any other native button props
  */
 export default function Button({
   children,
   variant = "primary",
+  size = "md",
+  fullWidth = false,
+  loading = false,
+  disabled = false,
   type = "button",
   className = "",
   ...rest
 }) {
-  const variantClass =
-    variant === "secondary"
-      ? "hcc-btn--secondary"
-      : variant === "danger"
-        ? "hcc-btn--danger"
-        : "";
+  const classes = [
+    "hcc-btn",
+    `hcc-btn--${variant}`,
+    `hcc-btn--${size}`,
+    fullWidth ? "hcc-btn--full" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  // Accessibility: if loading, aria-busy and disable interaction
+  const isDisabled = disabled || loading;
 
   return (
     <button
       type={type}
-      className={`hcc-btn ${variantClass} ${className}`.trim()}
+      className={classes}
+      disabled={isDisabled}
+      aria-disabled={isDisabled}
+      aria-busy={loading}
       {...rest}
     >
-      {children}
+      {loading && <span className="hcc-btn__spinner" aria-hidden="true" />}
+      <span style={loading ? { opacity: 0.7 } : undefined}>{children}</span>
     </button>
   );
 }
