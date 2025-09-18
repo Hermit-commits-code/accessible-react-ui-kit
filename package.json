@@ -1,28 +1,40 @@
 {
   "name": "accessible-react-ui-kit",
   "version": "1.0.0",
-  "description": "Accessible-first, timeless UI blocks for React projects.   **Features:**",
-  "main": "index.js",
+  "description": "Accessible-first, timeless UI blocks for React projects.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "echo \"No test specified\" && exit 0",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,md}\"",
+    "prepublishOnly": "npm run build && npm run lint"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hermit-commits-code/accessible-react-ui-kit.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "ui-kit",
+    "accessible",
+    "component-library",
+    "design-system"
+  ],
+  "author": "Hermit-commits-code <your-email@example.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Hermit-commits-code/accessible-react-ui-kit/issues"
   },
   "homepage": "https://github.com/Hermit-commits-code/accessible-react-ui-kit#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

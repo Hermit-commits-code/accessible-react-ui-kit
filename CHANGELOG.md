@@ -1,0 +1,25 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),  
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [Unreleased]
+
+### Added
+
+- Initial UI component library project structure
+- Comprehensive README with usage, theming, example app, and component documentation
+- CONTRIBUTING.md with contribution guidelines
+- CODE_OF_CONDUCT.md based on Contributor Covenant
+- LICENSE.md (MIT License)
+- SECURITY.md for responsible vulnerability disclosure
+- GitHub issue templates (bug report, feature request)
+- GitHub pull request template
+
+---
+
+<!-- Add additional versions and changes below as the project evolves -->
