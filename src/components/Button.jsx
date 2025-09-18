@@ -5,51 +5,52 @@ import "../hcc-button.css";
  * Button component
  *
  * Props:
- * - children: ReactNode
- * - variant: "primary" | "secondary" | "neutral" | "danger"
+ * - variant: "primary" | "secondary" | "danger" | "ghost"
  * - size: "sm" | "md" | "lg"
- * - fullWidth: boolean
- * - loading: boolean
  * - disabled: boolean
+ * - loading: boolean (shows spinner, disables)
+ * - full: boolean (full width)
+ * - leftIcon: ReactNode
+ * - rightIcon: ReactNode
+ * - children: node
  * - type: "button" | "submit" | "reset"
- * - className: string (optional, extra classes)
- * - ...rest: any other native button props
+ * - className: string
+ * - ...rest button props
  */
 export default function Button({
-  children,
   variant = "primary",
   size = "md",
-  fullWidth = false,
-  loading = false,
   disabled = false,
+  loading = false,
+  full = false,
+  leftIcon,
+  rightIcon,
+  children,
   type = "button",
   className = "",
   ...rest
 }) {
-  const classes = [
-    "hcc-btn",
-    `hcc-btn--${variant}`,
-    `hcc-btn--${size}`,
-    fullWidth ? "hcc-btn--full" : "",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  // Accessibility: if loading, aria-busy and disable interaction
   const isDisabled = disabled || loading;
-
   return (
     <button
       type={type}
-      className={classes}
+      className={[
+        "hcc-btn",
+        `hcc-btn--${variant}`,
+        size !== "md" && `hcc-btn--${size}`,
+        full && "hcc-btn--full",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       disabled={isDisabled}
       aria-disabled={isDisabled}
-      aria-busy={loading}
       {...rest}
     >
-      {loading && <span className="hcc-btn__spinner" aria-hidden="true" />}
-      <span style={loading ? { opacity: 0.7 } : undefined}>{children}</span>
+      {loading && <span className="hcc-btn-spinner" aria-hidden="true" />}
+      {leftIcon && <span className="hcc-btn-icon">{leftIcon}</span>}
+      {children}
+      {rightIcon && <span className="hcc-btn-icon">{rightIcon}</span>}
     </button>
   );
 }

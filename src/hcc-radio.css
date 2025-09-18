@@ -1,60 +1,125 @@
 .hcc-radio-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.25rem;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
 }
 
-.hcc-radio-label {
-  font-size: 1rem;
+.hcc-radio-label-group {
   font-weight: 500;
-  color: #1e293b;
-  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: var(--ui-radio-label-color, #334155);
+  margin-bottom: 0.15em;
 }
 
-.hcc-radio-option {
+.hcc-radio-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5em;
 }
 
 .hcc-radio {
-  width: 1.1em;
-  height: 1.1em;
-  border: 1.5px solid #d1d5db;
-  border-radius: 50%;
   appearance: none;
-  background: #fff;
+  width: 1.14em;
+  height: 1.14em;
+  border: 1.5px solid var(--ui-radio-border, #cbd5e1);
+  border-radius: 50%;
+  background: var(--ui-radio-bg, #fff);
+  margin: 0;
   outline: none;
-  cursor: pointer;
-  transition: border-color 0.15s;
   position: relative;
   display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  transition:
+    border 0.15s,
+    box-shadow 0.15s;
 }
 
+.hcc-radio:focus {
+  border-color: var(--ui-radio-border-focus, #2563eb);
+  box-shadow: 0 0 0 2px var(--ui-radio-focus-ring, #2563eb33);
+}
 .hcc-radio:checked {
-  border-color: #2563eb;
-  background-color: #fff;
+  border-color: var(--ui-radio-border-checked, #2563eb);
+  background: var(--ui-radio-bg-checked, #2563eb);
 }
-
 .hcc-radio:checked::after {
   content: "";
   display: block;
   position: absolute;
-  left: 0.3em;
-  top: 0.3em;
-  width: 0.5em;
-  height: 0.5em;
+  left: 0.28em;
+  top: 0.28em;
+  width: 0.42em;
+  height: 0.42em;
   border-radius: 50%;
-  background: #2563eb;
+  background: var(--ui-radio-dot, #fff);
 }
 
-.hcc-radio:focus {
-  box-shadow: 0 0 0 2px #2563eb55;
+.hcc-radio--error {
+  border-color: var(--ui-radio-border-error, #dc2626);
+  background: var(--ui-radio-bg-error, #fef2f2);
+}
+.hcc-radio--error:checked {
+  background: var(--ui-radio-bg-error-checked, #dc2626);
+  border-color: var(--ui-radio-border-error, #dc2626);
+}
+.hcc-radio--success {
+  border-color: var(--ui-radio-border-success, #16a34a);
+  background: var(--ui-radio-bg-success, #f0fdf4);
+}
+.hcc-radio--success:checked {
+  background: var(--ui-radio-bg-success-checked, #16a34a);
+  border-color: var(--ui-radio-border-success, #16a34a);
 }
 
+.hcc-radio[disabled],
+.hcc-radio[aria-disabled="true"] {
+  background: var(--ui-radio-bg-disabled, #f1f5f9);
+  border-color: var(--ui-radio-border-disabled, #cbd5e1);
+  color: var(--ui-radio-color-disabled, #94a3b8);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.hcc-radio[readonly] {
+  background: var(--ui-radio-bg-readonly, #f8fafc);
+  color: var(--ui-radio-color-readonly, #64748b);
+  pointer-events: none;
+}
+
+.hcc-radio--sm {
+  width: 0.92em;
+  height: 0.92em;
+}
+.hcc-radio--lg {
+  width: 1.42em;
+  height: 1.42em;
+}
+.hcc-radio-label {
+  user-select: none;
+  color: var(--ui-radio-label-color, #334155);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.hcc-radio--sm + .hcc-radio-label {
+  font-size: 0.93rem;
+}
+.hcc-radio--lg + .hcc-radio-label {
+  font-size: 1.17rem;
+}
+
+.hcc-radio-help {
+  font-size: 0.92rem;
+  color: var(--ui-radio-help-color, #64748b);
+  margin-top: 2px;
+}
 .hcc-radio-error {
-  color: #dc2626;
-  font-size: 0.95em;
-  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  color: var(--ui-radio-color-error, #dc2626);
+  margin-top: 2px;
+}
+.hcc-radio-success {
+  font-size: 0.92rem;
+  color: var(--ui-radio-color-success, #16a34a);
+  margin-top: 2px;
 }
