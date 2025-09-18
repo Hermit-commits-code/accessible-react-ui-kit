@@ -1,49 +1,92 @@
 .hcc-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(30, 41, 59, 0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: var(--ui-modal-backdrop-bg, #0f172a88);
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hcc-modal-fadein 0.17s;
 }
 
-.hcc-modal {
-  background: #fff;
-  border-radius: 0.5rem;
-  padding: 2rem 1.75rem 1.5rem 1.75rem;
-  min-width: 320px;
-  max-width: 96vw;
-  box-shadow: 0 12px 32px 0 rgba(30, 41, 59, 0.14);
-  position: relative;
-  z-index: 1001;
-  animation: hcc-modal-fade-in 0.18s;
-}
-
-@keyframes hcc-modal-fade-in {
+@keyframes hcc-modal-fadein {
   from {
     opacity: 0;
-    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1);
   }
 }
 
-.hcc-modal__close-btn {
+.hcc-modal {
+  background: var(--ui-modal-bg, #fff);
+  border-radius: var(--ui-modal-radius, 0.8em);
+  box-shadow: var(--ui-modal-shadow, 0 8px 40px #0004);
+  max-width: 95vw;
+  min-width: 290px;
+  width: 100%;
+  max-height: 94vh;
+  overflow-y: auto;
+  padding: var(--ui-modal-padding, 2em 1.6em);
+  position: relative;
+  z-index: 1002;
+  animation: hcc-modal-slidein 0.19s cubic-bezier(0.6, 0.6, 0.27, 1);
+  outline: none;
+}
+@keyframes hcc-modal-slidein {
+  from {
+    transform: translateY(32px) scale(0.98);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.hcc-modal-header {
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-bottom: 1.1em;
+  color: var(--ui-modal-header-color, #1e293b);
+}
+
+.hcc-modal-footer {
+  margin-top: 1.5em;
+  text-align: right;
+  gap: 0.7em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hcc-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.1em;
+  right: 1.3em;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #334155;
+  color: var(--ui-modal-close-color, #64748b);
+  font-size: 1.5em;
   cursor: pointer;
-  transition: color 0.15s;
+  line-height: 1;
+  z-index: 1010;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  transition: background 0.13s;
 }
-.hcc-modal__close-btn:hover,
-.hcc-modal__close-btn:focus {
-  color: #dc2626;
-  outline: none;
+.hcc-modal-close:focus-visible,
+.hcc-modal-close:hover {
+  background: var(--ui-modal-close-hover-bg, #e0e7ef);
+  color: var(--ui-modal-close-hover-color, #0f172a);
+}
+
+.hcc-modal--center {
+  align-items: center;
+  justify-content: center;
+}
+.hcc-modal--sm {
+  max-width: 370px;
+}
+.hcc-modal--lg {
+  max-width: 800px;
 }
