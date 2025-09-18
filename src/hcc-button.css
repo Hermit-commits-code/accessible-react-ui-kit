@@ -2,86 +2,113 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
-  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.125;
   border: none;
-  outline: none;
-  border-radius: 0.375em;
-  padding: 0.55em 1.25em;
-  font-size: 1rem;
+  border-radius: var(--ui-radius, 0.375em);
   cursor: pointer;
   transition:
-    background 0.13s,
-    color 0.13s,
-    box-shadow 0.13s;
-  background: #2563eb;
-  color: #fff;
-  box-shadow: 0 1px 2px #0001;
-  gap: 0.5em;
+    background 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+  outline: none;
   position: relative;
-  user-select: none;
+  gap: 0.5em;
+  /* Default (md) size */
+  font-size: 1rem;
+  padding: 0.55em 1.25em;
+  min-width: 2.5em;
+  min-height: 2.5em;
+  font-family: var(--ui-font, inherit);
 }
-.hcc-btn:active {
-  box-shadow: none;
-  opacity: 0.92;
-}
+
 .hcc-btn:focus-visible {
-  box-shadow: 0 0 0 2.5px #2563eb55;
-}
-
-.hcc-btn--secondary {
-  background: #f3f4f6;
-  color: #1e293b;
-  border: 1.5px solid #cbd5e1;
-}
-.hcc-btn--danger {
-  background: #dc2626;
-  color: #fff;
-}
-.hcc-btn--ghost {
-  background: transparent;
-  color: #2563eb;
-  border: 1.5px solid #2563eb44;
-}
-
-.hcc-btn--sm {
-  padding: 0.37em 0.9em;
-  font-size: 0.93rem;
-}
-.hcc-btn--lg {
-  padding: 0.85em 2em;
-  font-size: 1.13rem;
-}
-
-.hcc-btn--full {
-  width: 100%;
+  box-shadow: 0 0 0 2px var(--ui-button-focus-ring, #2563eb55);
 }
 
 .hcc-btn:disabled,
 .hcc-btn[aria-disabled="true"] {
-  opacity: 0.55;
-  pointer-events: none;
+  opacity: 0.6;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
-.hcc-btn-icon {
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.18em;
-  line-height: 1;
+.hcc-btn.hcc-btn--full {
+  width: 100%;
+  display: flex;
 }
 
-.hcc-btn-spinner {
-  margin-right: 0.5em;
+.hcc-btn.hcc-btn--sm {
+  font-size: 0.92rem;
+  padding: 0.35em 1em;
+  min-width: 2em;
+  min-height: 2em;
+}
+
+.hcc-btn.hcc-btn--lg {
+  font-size: 1.13rem;
+  padding: 0.7em 1.7em;
+  min-width: 2.7em;
+  min-height: 2.7em;
+}
+
+/* Variants */
+.hcc-btn--primary {
+  background: var(--ui-button-bg, #2563eb);
+  color: var(--ui-button-color, #fff);
+}
+.hcc-btn--primary:hover:not(:disabled):not([aria-disabled="true"]),
+.hcc-btn--primary:focus-visible {
+  background: var(--ui-button-bg-hover, #1d4ed8);
+}
+
+.hcc-btn--secondary {
+  background: var(--ui-button-secondary-bg, #fff);
+  color: var(--ui-button-secondary-color, #2563eb);
+  border: 1.5px solid var(--ui-button-secondary-border, #2563eb);
+}
+.hcc-btn--secondary:hover:not(:disabled):not([aria-disabled="true"]),
+.hcc-btn--secondary:focus-visible {
+  background: var(--ui-button-secondary-bg-hover, #e2e8f0);
+}
+
+.hcc-btn--neutral {
+  background: var(--ui-button-neutral-bg, #fff);
+  color: var(--ui-button-neutral-color, #334155);
+  border: 1.5px solid var(--ui-button-neutral-border, #cbd5e1);
+}
+.hcc-btn--neutral:hover:not(:disabled):not([aria-disabled="true"]),
+.hcc-btn--neutral:focus-visible {
+  background: var(--ui-button-neutral-bg-hover, #f8fafc);
+}
+
+.hcc-btn--danger {
+  background: var(--ui-button-danger-bg, #dc2626);
+  color: var(--ui-button-danger-color, #fff);
+}
+.hcc-btn--danger:hover:not(:disabled):not([aria-disabled="true"]),
+.hcc-btn--danger:focus-visible {
+  background: var(--ui-button-danger-bg-hover, #b91c1c);
+}
+
+/* Loader spinner inside button */
+.hcc-btn__spinner {
   display: inline-block;
+  border: 2px solid var(--ui-button-spinner-bg, #fff);
+  border-top: 2px solid var(--ui-button-spinner-fg, #2563eb);
+  border-radius: 50%;
   width: 1em;
   height: 1em;
-  border: 2.5px solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
   animation: hcc-btn-spin 0.7s linear infinite;
-  vertical-align: -0.1em;
+  margin-right: 0.5em;
+  vertical-align: middle;
 }
+.hcc-btn--secondary .hcc-btn__spinner,
+.hcc-btn--neutral .hcc-btn__spinner {
+  border: 2px solid var(--ui-button-spinner-alt-bg, #2563eb);
+  border-top: 2px solid var(--ui-button-spinner-alt-fg, #ddd);
+}
+
 @keyframes hcc-btn-spin {
   to {
     transform: rotate(360deg);

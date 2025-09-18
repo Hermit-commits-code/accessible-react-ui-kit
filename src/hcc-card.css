@@ -1,17 +1,17 @@
 .hcc-card {
-  background: #fff;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 0.65em;
-  box-shadow: 0 2px 8px 0 #0001;
-  padding: 1.2em 1.4em;
-  margin-bottom: 1.5em;
+  background: var(--ui-card-bg, #fff);
+  border: 1.5px solid var(--ui-card-border, #e5e7eb);
+  border-radius: var(--ui-card-radius, 0.65em);
+  box-shadow: var(--ui-card-shadow, 0 2px 8px 0 #0001);
+  padding: var(--ui-card-padding, 1.2em 1.4em);
+  margin-bottom: var(--ui-card-margin-bottom, 1.5em);
   transition: box-shadow 0.14s;
   display: flex;
   flex-direction: column;
   max-width: 100%;
 }
 .hcc-card--shadow {
-  box-shadow: 0 4px 16px 0 #0002;
+  box-shadow: var(--ui-card-shadow-elevated, 0 4px 16px 0 #0002);
 }
 .hcc-card--borderless {
   border: none;
@@ -20,23 +20,23 @@
   font-weight: 600;
   font-size: 1.15em;
   margin-bottom: 0.6em;
-  color: #1e293b;
+  color: var(--ui-card-header-color, #1e293b);
 }
 .hcc-card-footer {
   margin-top: 1em;
   font-size: 0.98em;
-  color: #64748b;
+  color: var(--ui-card-footer-color, #64748b);
 }
 .hcc-card-body {
   flex: 1 1 auto;
 }
 .hcc-card--sm {
-  padding: 0.7em 1em;
-  border-radius: 0.48em;
+  padding: var(--ui-card-padding-sm, 0.7em 1em);
+  border-radius: var(--ui-card-radius-sm, 0.48em);
 }
 .hcc-card--lg {
-  padding: 2em 2.2em;
-  border-radius: 1em;
+  padding: var(--ui-card-padding-lg, 2em 2.2em);
+  border-radius: var(--ui-card-radius-lg, 1em);
 }
 .hcc-card--center {
   align-items: center;

@@ -1,3 +1,4 @@
+import "./theme.css";
 import "./index.css";
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
@@ -227,6 +228,22 @@ function App() {
             Both Icons
           </Button>
         </div>
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2 style={{ marginBottom: "1rem" }}>Alert Components</h2>
+        <Alert variant="info" title="Info!">
+          This is an informational alert.
+        </Alert>
+        <Alert variant="success" title="Success!">
+          This is a success alert.
+        </Alert>
+        <Alert variant="warning" title="Warning!">
+          This is a warning alert.
+        </Alert>
+        <Alert variant="error" title="Error!">
+          This is an error alert.
+        </Alert>
       </section>
 
       <section className="section">

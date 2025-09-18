@@ -3,32 +3,32 @@
   align-items: flex-start;
   gap: 0.75em;
   padding: 1em 1.25em;
-  border-radius: 0.375em;
+  border-radius: var(--ui-radius, 0.375em);
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 1.25em;
   position: relative;
-  box-shadow: 0 1px 2px 0 #0001;
+  box-shadow: 0 1px 2px 0 var(--ui-alert-shadow, #0001);
 }
 .hcc-alert--info {
-  background: #eff6ff;
-  color: #2563eb;
-  border: 1.5px solid #2563eb33;
+  background: var(--ui-alert-info-bg, #eff6ff);
+  color: var(--ui-alert-info-color, #2563eb);
+  border: 1.5px solid var(--ui-alert-info-border, #2563eb33);
 }
 .hcc-alert--success {
-  background: #f0fdf4;
-  color: #16a34a;
-  border: 1.5px solid #16a34a33;
+  background: var(--ui-alert-success-bg, #f0fdf4);
+  color: var(--ui-alert-success-color, #16a34a);
+  border: 1.5px solid var(--ui-alert-success-border, #16a34a33);
 }
 .hcc-alert--warning {
-  background: #fefce8;
-  color: #ca8a04;
-  border: 1.5px solid #ca8a0433;
+  background: var(--ui-alert-warning-bg, #fefce8);
+  color: var(--ui-alert-warning-color, #ca8a04);
+  border: 1.5px solid var(--ui-alert-warning-border, #ca8a0433);
 }
 .hcc-alert--error {
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1.5px solid #dc262633;
+  background: var(--ui-alert-error-bg, #fef2f2);
+  color: var(--ui-alert-error-color, #dc2626);
+  border: 1.5px solid var(--ui-alert-error-border, #dc262633);
 }
 
 .hcc-alert-icon {
@@ -66,7 +66,7 @@
 }
 .hcc-alert-close:hover {
   opacity: 1;
-  background: #0001;
+  background: var(--ui-alert-close-hover-bg, #0001);
 }
 
 .hcc-alert-inline {

@@ -360,58 +360,6 @@ A modern, accessible radio button group with size, state, help/error message sup
 
 ---
 
-# RadioGroup
-
-A modern, accessible radio button group with size, state, help/error message support.
-
-## Usage
-
-```jsx
-<RadioGroup
-  label="Favorite Color"
-  name="color"
-  options={[
-    { label: "Red", value: "red" },
-    { label: "Green", value: "green" },
-    { label: "Blue", value: "blue", disabled: true },
-  ]}
-  value={selectedColor}
-  onChange={handleColorChange}
-  required
-  size="md"
-  help="Pick your favorite color"
-  error={error}
-  success={success}
-/>
-```
-
-## Props
-
-| Prop        | Type                                 | Default | Description                    |
-| ----------- | ------------------------------------ | ------- | ------------------------------ |
-| `label`     | `string`                             | —       | Optional group label           |
-| `name`      | `string`                             | —       | All radios in group share this |
-| `value`     | `string`                             | —       | Selected radio value           |
-| `onChange`  | `function(e)`                        | —       | Change handler                 |
-| `options`   | `Array<{ label, value, disabled? }>` | `[]`    | List of options                |
-| `required`  | `boolean`                            | `false` | Mark as required               |
-| `disabled`  | `boolean`                            | `false` | Disable all radios             |
-| `readOnly`  | `boolean`                            | `false` | Read only                      |
-| `size`      | `"sm" \| "md" \| "lg"`               | `"md"`  | Radio size                     |
-| `error`     | `string`                             | —       | Show error state/message       |
-| `success`   | `string`                             | —       | Show success state/message     |
-| `help`      | `string`                             | —       | Show help/hint text            |
-| `className` | `string`                             | —       | Extra CSS classes              |
-
-## Accessibility
-
-- Group and radios use proper roles and `aria-` attributes
-- Error/help/success messages are read via `aria-describedby`
-- Keyboard/focus ring visible
-- Radios are keyboard navigable
-
----
-
 # Alert
 
 A visually distinct alert box for feedback messages, warnings, errors, and more.
@@ -604,7 +552,7 @@ const [open, setOpen] = useState(false);
 
 ## Example App
 
-Try out all components in the included `main.jsx` demo.
+Try out all components in the included [`main.jsx`](./src/main.jsx) demo.
 
 ---
 
