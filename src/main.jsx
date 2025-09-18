@@ -106,21 +106,47 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1 className="app-title">UI Component Library Preview</h1>
-        <p className="app-description">
-          Start building your components in <code>src/components/</code>!
-        </p>
       </header>
 
       <section className="section">
         <h2 className="section-title">Buttons</h2>
-        <div className="button-group">
-          <Button variant="primary" onClick={() => alert("Clicked!")}>
-            Primary
-          </Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="neutral" disabled>
-            Disabled
-          </Button>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div>
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary" style={{ marginLeft: 8 }}>
+              Secondary
+            </Button>
+            <Button variant="neutral" style={{ marginLeft: 8 }}>
+              Neutral
+            </Button>
+            <Button variant="danger" style={{ marginLeft: 8 }}>
+              Danger
+            </Button>
+          </div>
+          <div>
+            <Button size="sm" variant="primary">
+              Small
+            </Button>
+            <Button size="md" variant="primary" style={{ marginLeft: 8 }}>
+              Medium
+            </Button>
+            <Button size="lg" variant="primary" style={{ marginLeft: 8 }}>
+              Large
+            </Button>
+          </div>
+          <div>
+            <Button fullWidth variant="secondary">
+              Full Width Button
+            </Button>
+          </div>
+          <div>
+            <Button loading variant="primary">
+              Loading…
+            </Button>
+            <Button disabled variant="primary" style={{ marginLeft: 8 }}>
+              Disabled
+            </Button>
+          </div>
         </div>
       </section>
 
