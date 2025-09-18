@@ -2,11 +2,16 @@
 
 A modern, accessible, and customizable React component library for rapid MVP development.
 
+[![npm version](https://img.shields.io/npm/v/your-ui-library.svg)](https://www.npmjs.com/package/your-ui-library)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 ---
 
 ## Table of Contents
 
 - [Features](#features)
+- [Theming](#theming)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Components](#components)
@@ -20,9 +25,12 @@ A modern, accessible, and customizable React component library for rapid MVP dev
   - [Card](#card)
   - [Modal](#modal)
   - [Spinner](#spinner)
+- [Component Status](#component-status)
+- [Roadmap](#roadmap)
 - [Example App](#example-app)
 - [Development](#development)
 - [Testing](#testing)
+- [Contribution](#contribution)
 - [License](#license)
 - [Credits](#credits)
 
@@ -30,11 +38,31 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 
 ## Features
 
-- **MVP-first:** Fast, clear, production-grade React components
-- **Accessible:** WCAG-compliant, keyboard-friendly, screen reader support
-- **Customizable:** Easy theming and extension via CSS or utility classes
-- **Documented:** Clear prop tables and usage examples
-- **Typescript Friendly:** (optional, coming soon)
+- **MVP-first:** Fast, production-ready React components for quick prototyping and real apps.
+- **Accessible:** WCAG-compliant, keyboard-friendly, screen-reader support.
+- **Customizable:** Theme everything via CSS variables or utility classes.
+- **Documented:** Clear prop tables and usage examples.
+- **TypeScript Friendly:** Written in/compatible with TypeScript (coming soon).
+- **Lightweight:** Minimal dependencies, tree-shakable.
+- **Composable:** Easy to integrate and extend.
+
+---
+
+## Theming
+
+All components are fully customizable via CSS variables for dark mode, branding, or any custom theme.
+
+Override variables in your app’s CSS:
+
+```css
+:root {
+  --ui-button-primary-bg: #1976d2;
+  --ui-modal-bg: #222c35;
+  /* See src/theme.css for all variables */
+}
+```
+
+You can also scope them to a class or selector for alternate themes.
 
 ---
 
@@ -72,6 +100,8 @@ function App() {
 ---
 
 ## Components
+
+<!-- Repeat for each component: usage + props + accessibility -->
 
 ### Button
 
@@ -151,11 +181,9 @@ A modern, accessible input component with size, state, and help/error message su
 
 ---
 
-# Textarea
+### Textarea
 
 A modern, accessible textarea with size, state, help/error messages, and optional character counter.
-
-## Usage
 
 ```jsx
 <Textarea
@@ -173,8 +201,6 @@ A modern, accessible textarea with size, state, help/error messages, and optiona
   showCount
 />
 ```
-
-## Props
 
 | Prop          | Type                   | Default | Description                           |
 | ------------- | ---------------------- | ------- | ------------------------------------- |
@@ -196,7 +222,7 @@ A modern, accessible textarea with size, state, help/error messages, and optiona
 | `className`   | `string`               | —       | Extra CSS classes                     |
 | `...rest`     | `any`                  | —       | Any native textarea props             |
 
-## Accessibility
+**Accessibility:**
 
 - Label and textarea are linked for screen readers.
 - Error/help/success messages are read out via `aria-describedby`.
@@ -205,11 +231,9 @@ A modern, accessible textarea with size, state, help/error messages, and optiona
 
 ---
 
-# Select
+### Select
 
 A modern, accessible select field with size, state, placeholder, and help/error message support.
-
-## Usage
 
 ```jsx
 <Select
@@ -231,8 +255,6 @@ A modern, accessible select field with size, state, placeholder, and help/error 
 />
 ```
 
-## Props
-
 | Prop          | Type                                 | Default | Description                         |
 | ------------- | ------------------------------------ | ------- | ----------------------------------- |
 | `label`       | `string`                             | —       | Optional label text                 |
@@ -252,7 +274,7 @@ A modern, accessible select field with size, state, placeholder, and help/error 
 | `className`   | `string`                             | —       | Extra CSS classes                   |
 | `...rest`     | `any`                                | —       | Any native select props             |
 
-## Accessibility
+**Accessibility:**
 
 - Label and select are linked for screen readers.
 - Error/help/success messages are read out via `aria-describedby`.
@@ -261,11 +283,9 @@ A modern, accessible select field with size, state, placeholder, and help/error 
 
 ---
 
-# Checkbox
+### Checkbox
 
 A modern, accessible checkbox with size, state, help/error message support.
-
-## Usage
 
 ```jsx
 <Checkbox
@@ -280,8 +300,6 @@ A modern, accessible checkbox with size, state, help/error message support.
   success={success}
 />
 ```
-
-## Props
 
 | Prop        | Type                   | Default | Description                        |
 | ----------- | ---------------------- | ------- | ---------------------------------- |
@@ -299,7 +317,7 @@ A modern, accessible checkbox with size, state, help/error message support.
 | `className` | `string`               | —       | Extra CSS classes                  |
 | `...rest`   | `any`                  | —       | Any native checkbox props          |
 
-## Accessibility
+**Accessibility:**
 
 - Label and checkbox are linked via `htmlFor`
 - Error/help/success messages are read out via `aria-describedby`
@@ -308,11 +326,9 @@ A modern, accessible checkbox with size, state, help/error message support.
 
 ---
 
-# RadioGroup
+### RadioGroup
 
 A modern, accessible radio button group with size, state, help/error message support.
-
-## Usage
 
 ```jsx
 <RadioGroup
@@ -333,8 +349,6 @@ A modern, accessible radio button group with size, state, help/error message sup
 />
 ```
 
-## Props
-
 | Prop        | Type                                 | Default | Description                    |
 | ----------- | ------------------------------------ | ------- | ------------------------------ |
 | `label`     | `string`                             | —       | Optional group label           |
@@ -351,7 +365,7 @@ A modern, accessible radio button group with size, state, help/error message sup
 | `help`      | `string`                             | —       | Show help/hint text            |
 | `className` | `string`                             | —       | Extra CSS classes              |
 
-## Accessibility
+**Accessibility:**
 
 - Group and radios use proper roles and `aria-` attributes
 - Error/help/success messages are read via `aria-describedby`
@@ -360,11 +374,9 @@ A modern, accessible radio button group with size, state, help/error message sup
 
 ---
 
-# Alert
+### Alert
 
 A visually distinct alert box for feedback messages, warnings, errors, and more.
-
-## Usage
 
 ```jsx
 <Alert variant="success" title="Success!">
@@ -379,8 +391,6 @@ A visually distinct alert box for feedback messages, warnings, errors, and more.
 </Alert>
 ```
 
-## Props
-
 | Prop        | Type                                          | Default  | Description                     |
 | ----------- | --------------------------------------------- | -------- | ------------------------------- |
 | `variant`   | `"info" \| "success" \| "warning" \| "error"` | `"info"` | Visual style and icon           |
@@ -390,18 +400,16 @@ A visually distinct alert box for feedback messages, warnings, errors, and more.
 | `inline`    | `boolean`                                     | `false`  | Display inline (not full width) |
 | `className` | `string`                                      | —        | Extra CSS classes               |
 
-## Accessibility
+**Accessibility:**
 
 - Uses `role="alert"` or `role="status"` and `aria-live` for screen reader announcements
 - Dismiss button is accessible and focusable
 
 ---
 
-# Card
+### Card
 
 A visually distinct container for grouping related content.
-
-## Usage
 
 ```jsx
 <Card header="User Profile">
@@ -418,8 +426,6 @@ A visually distinct container for grouping related content.
 </Card>
 ```
 
-## Props
-
 | Prop         | Type                 | Default | Description                    |
 | ------------ | -------------------- | ------- | ------------------------------ |
 | `header`     | string \| ReactNode  | —       | Top section of card            |
@@ -432,58 +438,16 @@ A visually distinct container for grouping related content.
 | `as`         | string               | section | HTML element (section/article) |
 | `className`  | string               | —       | Extra CSS classes              |
 
-## Accessibility
+**Accessibility:**
 
 - By default, uses `<section>`; for stand-alone content, use `as="article"` or add ARIA labels as needed.
 - Header and footer are semantic and accessible if provided.
 
 ---
 
-# Button
-
-A flexible, accessible button for actions and forms.
-
-## Usage
-
-```jsx
-<Button>Click me</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="danger" size="lg" full>
-  Delete
-</Button>
-<Button loading>Loading…</Button>
-<Button leftIcon={<Icon />} rightIcon={<ChevronRight />} size="sm">
-  With Icons
-</Button>
-```
-
-## Props
-
-| Prop        | Type                                            | Default   | Description                   |
-| ----------- | ----------------------------------------------- | --------- | ----------------------------- |
-| `variant`   | "primary" \| "secondary" \| "danger" \| "ghost" | "primary" | Visual style                  |
-| `size`      | "sm" \| "md" \| "lg"                            | "md"      | Button size                   |
-| `disabled`  | boolean                                         | false     | Disabled state                |
-| `loading`   | boolean                                         | false     | Loading state (shows spinner) |
-| `full`      | boolean                                         | false     | Full width                    |
-| `leftIcon`  | ReactNode                                       | —         | Icon left of label            |
-| `rightIcon` | ReactNode                                       | —         | Icon right of label           |
-| `children`  | node                                            | —         | Label/content                 |
-| `type`      | "button" \| "submit" \| "reset"                 | "button"  | HTML button type              |
-| `className` | string                                          | —         | Extra CSS classes             |
-
-## Accessibility
-
-- Always uses a semantic `<button>` element
-- Disabled and loading states are keyboard-inaccessible and announced
-
----
-
-# Spinner
+### Spinner
 
 A simple animated indicator for loading states.
-
-## Usage
 
 ```jsx
 <Spinner />
@@ -492,8 +456,6 @@ A simple animated indicator for loading states.
 <Spinner color="muted" ariaLabel="Please wait…" />
 ```
 
-## Props
-
 | Prop        | Type                         | Default   | Description         |
 | ----------- | ---------------------------- | --------- | ------------------- |
 | `size`      | "sm"\|"md"\|"lg"             | "md"      | Spinner size        |
@@ -501,18 +463,16 @@ A simple animated indicator for loading states.
 | `ariaLabel` | string                       | "Loading" | Screen reader label |
 | `className` | string                       | —         | Extra CSS classes   |
 
-## Accessibility
+**Accessibility:**
 
 - Uses `role="status"` and `aria-label` for assistive tech.
 - Use an informative `ariaLabel` for context.
 
 ---
 
-# Modal
+### Modal
 
 A dialog overlay for focused content or actions.
-
-## Usage
 
 ```jsx
 const [open, setOpen] = useState(false);
@@ -527,8 +487,6 @@ const [open, setOpen] = useState(false);
 </Modal>;
 ```
 
-## Props
-
 | Prop          | Type             | Default | Description                  |
 | ------------- | ---------------- | ------- | ---------------------------- |
 | `open`        | boolean          | —       | Modal visibility             |
@@ -541,7 +499,7 @@ const [open, setOpen] = useState(false);
 | `closeButton` | boolean          | true    | Show close (×) button        |
 | `className`   | string           | —       | Extra CSS classes            |
 
-## Accessibility
+**Accessibility:**
 
 - Uses `role="dialog"` and `aria-modal`
 - ESC key closes modal
@@ -550,24 +508,66 @@ const [open, setOpen] = useState(false);
 
 ---
 
+## Component Status
+
+| Component  | Status     | Docs | Themeable |
+| ---------- | ---------- | ---- | --------- |
+| Button     | ✅         | ✅   | ✅        |
+| Input      | ✅         | ✅   | ✅        |
+| Textarea   | ✅         | ✅   | ✅        |
+| Select     | ✅         | ✅   | ✅        |
+| Checkbox   | ✅         | ✅   | ✅        |
+| RadioGroup | ✅         | ✅   | ✅        |
+| Alert      | ✅         | ✅   | ✅        |
+| Card       | ✅         | ✅   | ✅        |
+| Modal      | ✅         | ✅   | ✅        |
+| Spinner    | ✅         | ✅   | ✅        |
+| Tooltip    | 🚧 Planned |      |           |
+| Dropdown   | 🚧 Planned |      |           |
+| Tabs       | 🚧 Planned |      |           |
+| Toast      | 🚧 Planned |      |           |
+| Pagination | 🚧 Planned |      |           |
+
+---
+
+## Roadmap
+
+- Advanced components: Tooltip, Dropdown, Tabs, Toast, Pagination, etc.
+- TypeScript types and support
+- Automated testing (Jest, Testing Library)
+- Improved documentation and demo site
+- Community & contribution guidelines
+
+---
+
 ## Example App
 
-Try out all components in the included [`main.jsx`](./src/main.jsx) demo.
+Try all components in the included [`main.jsx`](./src/main.jsx) demo.
 
 ---
 
 ## Development
 
-- Clone the repo
-- Run `npm install`
-- Start the dev preview: `npm start` or `yarn start`
-- Edit components and see live reload
+1. Clone the repo
+2. Run `npm install`
+3. Start the dev preview: `npm start` or `yarn start`
+4. Edit components and see live reload
 
 ---
 
 ## Testing
 
-_Coming soon!_
+Component functionality is manually verified in [`main.jsx`](./src/main.jsx) during development.  
+Automated tests (using Jest and React Testing Library) are planned for future releases.
+
+To try the components in a real project, install the package from npm and import as shown above.
+
+---
+
+## Contribution
+
+Contributions are very welcome!  
+Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
 
