@@ -15,10 +15,10 @@ export default function AlertPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/AlertDocs.md')
+    fetch('/accessible-react-ui-kit/AlertDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/AlertA11y.md')
+    fetch('/accessible-react-ui-kit/AlertA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

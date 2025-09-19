@@ -26,10 +26,10 @@ export default function RadioGroupPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/RadioGroupDocs.md')
+    fetch('/accessible-react-ui-kit/RadioGroupDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/RadioGroupA11y.md')
+    fetch('/accessible-react-ui-kit/RadioGroupA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

@@ -22,10 +22,10 @@ export default function InputPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/InputDocs.md')
+    fetch('/accessible-react-ui-kit/InputDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/InputA11y.md')
+    fetch('/accessible-react-ui-kit/InputA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

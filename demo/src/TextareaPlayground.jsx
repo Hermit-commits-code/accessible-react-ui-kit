@@ -24,10 +24,10 @@ export default function TextareaPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/TextareaDocs.md')
+    fetch('/accessible-react-ui-kit/TextareaDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/TextareaA11y.md')
+    fetch('/accessible-react-ui-kit/TextareaA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

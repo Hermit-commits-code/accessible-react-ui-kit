@@ -29,10 +29,10 @@ export default function SelectPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/SelectDocs.md')
+    fetch('/accessible-react-ui-kit/SelectDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/SelectA11y.md')
+    fetch('/accessible-react-ui-kit/SelectA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

@@ -20,10 +20,10 @@ export default function CheckboxPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/CheckboxDocs.md')
+    fetch('/accessible-react-ui-kit/CheckboxDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/CheckboxA11y.md')
+    fetch('/accessible-react-ui-kit/CheckboxA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

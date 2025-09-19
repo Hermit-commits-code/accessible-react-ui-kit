@@ -15,10 +15,10 @@ export default function ButtonPlayground() {
   const [a11y, setA11y] = useState2('')
 
   useEffect(() => {
-    fetch('/ButtonDocs.md')
+    fetch('/accessible-react-ui-kit/ButtonDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/ButtonA11y.md')
+    fetch('/accessible-react-ui-kit/ButtonA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])

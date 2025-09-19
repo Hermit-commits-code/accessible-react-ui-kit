@@ -1,6 +1,6 @@
 # UI Component Library
 
-[![Live Demo](https://img.shields.io/badge/demo-online-blue?logo=react)](https://hermit-commits-code.github.io/accessible-react-ui-kit/demo/)
+[![Live Demo](https://img.shields.io/badge/demo-online-blue?logo=react)](https://hermit-commits-code.github.io/accessible-react-ui-kit/)
 
 A modern, accessible, and customizable React component library for rapid MVP development.
 **[→ Accessibility Audit](ACCESSIBILITY_AUDIT.md)**

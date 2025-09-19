@@ -19,10 +19,10 @@ export default function CardPlayground() {
   const [a11y, setA11y] = useState('')
 
   useEffect(() => {
-    fetch('/CardDocs.md')
+    fetch('/accessible-react-ui-kit/CardDocs.md')
       .then((r) => r.text())
       .then(setDocs)
-    fetch('/CardA11y.md')
+    fetch('/accessible-react-ui-kit/CardA11y.md')
       .then((r) => r.text())
       .then(setA11y)
   }, [])
