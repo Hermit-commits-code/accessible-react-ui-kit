@@ -140,6 +140,7 @@ export default function SelectPlayground() {
         help={help}
         error={error}
         success={success}
+        data-testid="demo-select"
       />
       <pre
         style={{

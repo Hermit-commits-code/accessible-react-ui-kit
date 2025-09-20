@@ -54,7 +54,7 @@ export default function ButtonPlayground() {
           />
         </label>
       </div>
-      <Button variant={variant} disabled={disabled}>
+      <Button variant={variant} disabled={disabled} data-testid="demo-button">
         {label}
       </Button>
       <pre

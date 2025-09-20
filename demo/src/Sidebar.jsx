@@ -17,6 +17,8 @@ const navItems = [
 export default function Sidebar({ current, onNavigate }) {
   return (
     <nav
+      role="tablist"
+      aria-label="Component navigation"
       style={{
         width: 220,
         minHeight: '100vh',
@@ -33,6 +35,9 @@ export default function Sidebar({ current, onNavigate }) {
       {navItems.map((item) => (
         <Button
           key={item.id}
+          role="tab"
+          aria-selected={current === item.id}
+          tabIndex={current === item.id ? 0 : -1}
           variant={current === item.id ? 'primary' : 'ghost'}
           full
           onClick={() => onNavigate(item.id)}

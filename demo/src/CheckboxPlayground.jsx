@@ -120,6 +120,7 @@ export default function CheckboxPlayground() {
         help={help}
         error={error}
         success={success}
+        data-testid="demo-checkbox"
       />
       <pre
         style={{

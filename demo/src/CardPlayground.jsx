@@ -108,6 +108,7 @@ export default function CardPlayground() {
         size={size}
         center={center}
         as={as}
+        data-testid="demo-card"
       >
         <span style={{ color: '#222' }}>{body}</span>
       </Card>

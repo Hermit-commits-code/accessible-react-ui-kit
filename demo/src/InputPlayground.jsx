@@ -132,6 +132,7 @@ export default function InputPlayground() {
         help={help}
         error={error}
         success={success}
+        data-testid="demo-input"
       />
       <pre
         style={{

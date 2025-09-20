@@ -13,6 +13,13 @@ export default function TextareaPlayground() {
   const [required, setRequired] = useState(false)
   const [disabled, setDisabled] = useState(false)
   const [readOnly, setReadOnly] = useState(false)
+
+  // Read query params for test automation
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('textareaDisabled') === 'true') setDisabled(true)
+    if (params.get('textareaReadOnly') === 'true') setReadOnly(true)
+  }, [])
   const [size, setSize] = useState('md')
   const [fullWidth, setFullWidth] = useState(false)
   const [error, setError] = useState('')
@@ -153,6 +160,7 @@ export default function TextareaPlayground() {
         success={success}
         maxLength={maxLength}
         showCount={showCount}
+        data-testid="demo-textarea"
       />
       <pre
         style={{

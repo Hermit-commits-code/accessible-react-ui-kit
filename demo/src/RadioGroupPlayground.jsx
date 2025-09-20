@@ -111,6 +111,7 @@ export default function RadioGroupPlayground() {
         help={help}
         error={error}
         success={success}
+        data-testid="demo-radio-group"
       />
       <pre
         style={{

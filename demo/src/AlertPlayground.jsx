@@ -89,6 +89,7 @@ export default function AlertPlayground() {
           title={title}
           inline={inline}
           onClose={dismissible ? handleClose : undefined}
+          data-testid="demo-alert"
         >
           {body}
         </Alert>
