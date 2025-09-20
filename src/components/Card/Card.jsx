@@ -31,6 +31,7 @@ export default function Card({
   return (
     <El
       data-testid="card-root"
+      tabIndex={-1}
       className={[
         'hcc-card',
         shadow && 'hcc-card--shadow',

@@ -75,6 +75,7 @@ export default function Textarea({
       )}
       <textarea
         id={textareaId}
+        role="textbox"
         className={[
           'hcc-textarea',
           `hcc-textarea--${size}`,

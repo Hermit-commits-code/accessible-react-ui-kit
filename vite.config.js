@@ -6,5 +6,14 @@ export default defineConfig({
   root: './',
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
   },
 })

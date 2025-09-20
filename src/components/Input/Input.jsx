@@ -67,6 +67,7 @@ export default function Input({
         </label>
       )}
       <input
+        type="text"
         id={inputId}
         className={[
           'hcc-input',

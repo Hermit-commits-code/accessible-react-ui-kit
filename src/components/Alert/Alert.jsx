@@ -131,6 +131,7 @@ export default function Alert({
         .join(' ')}
       role={role}
       aria-live={ariaLive}
+      tabIndex={-1}
       {...rest}
     >
       <span className="hcc-alert-icon">{ICONS[variant]}</span>

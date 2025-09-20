@@ -71,7 +71,12 @@ export default function Select({
         </label>
       )}
       <div className="hcc-select-wrapper">
+        {/* Hidden listbox for ARIA compliance */}
+        <ul id={selectId + '-listbox'} hidden />
         <select
+          role="combobox"
+          aria-expanded="false"
+          aria-controls={selectId + '-listbox'}
           id={selectId}
           className={[
             'hcc-select',

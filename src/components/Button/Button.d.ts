@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type { ReactNode, FC } from 'react'
 
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'danger' | 'ghost'
@@ -6,13 +6,13 @@ export interface ButtonProps {
   disabled?: boolean
   loading?: boolean
   full?: boolean
-  leftIcon?: React.ReactNode
-  rightIcon?: React.ReactNode
-  children?: React.ReactNode
+  leftIcon?: ReactNode
+  rightIcon?: ReactNode
+  children?: ReactNode
   type?: 'button' | 'submit' | 'reset'
   className?: string
   [key: string]: any
 }
 
-declare const Button: React.FC<ButtonProps>
+declare const Button: FC<ButtonProps>
 export default Button
