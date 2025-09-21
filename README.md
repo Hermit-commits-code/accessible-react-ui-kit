@@ -1,8 +1,10 @@
 # UI Component Library
 
 [![Live Demo](https://img.shields.io/badge/demo-online-blue?logo=react)](https://hermit-commits-code.github.io/accessible-react-ui-kit/)
+[![Star on GitHub ⭐](https://img.shields.io/github/stars/Hermit-commits-code/accessible-react-ui-kit?style=social&label=Star%20on%20GitHub)](https://github.com/Hermit-commits-code/accessible-react-ui-kit)
 
 A modern, accessible, and customizable React component library for rapid MVP development.
+\n⭐️ If you find this project useful, please consider starring it on GitHub!\n
 **[→ Accessibility Audit](ACCESSIBILITY_AUDIT.md)**
 
 [![npm version](https://img.shields.io/npm/v/@joecodesallday/accessible-react-ui-kit.svg)](https://www.npmjs.com/package/@joecodesallday/accessible-react-ui-kit)
