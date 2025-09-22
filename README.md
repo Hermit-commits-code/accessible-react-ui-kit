@@ -4,11 +4,11 @@
 [![Star on GitHub ⭐](https://img.shields.io/github/stars/Hermit-commits-code/accessible-react-ui-kit?style=social&label=Star%20on%20GitHub)](https://github.com/Hermit-commits-code/accessible-react-ui-kit)
 
 A modern, accessible, and customizable React component library for rapid MVP development.
-\n⭐️ If you find this project useful, please consider starring it on GitHub!\n
+⭐️ If you find this project useful, please consider starring it on GitHub!
+
 **[→ Accessibility Audit](ACCESSIBILITY_AUDIT.md)**
 
 [![npm version](https://img.shields.io/npm/v/@joecodesallday/accessible-react-ui-kit.svg)](https://www.npmjs.com/package/@joecodesallday/accessible-react-ui-kit)
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
@@ -579,11 +579,7 @@ Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and our [Code o
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE.md).
-
 Copyright (c) 2025 Hermit-commits-code
-
-See the LICENSE.md file for full license text.
 
 ---
 
