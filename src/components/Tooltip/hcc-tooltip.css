@@ -1,0 +1,37 @@
+.hcc-tooltip {
+  position: absolute;
+  z-index: 1000;
+  background: #222;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  font-size: 0.95em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.95;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.hcc-tooltip-top {
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hcc-tooltip-bottom {
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hcc-tooltip-left {
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hcc-tooltip-right {
+  left: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hcc-tooltip-wrapper:focus-within .hcc-tooltip,
+.hcc-tooltip-wrapper:hover .hcc-tooltip {
+  opacity: 1;
+}

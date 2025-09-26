@@ -9,7 +9,6 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 
 **[→ Accessibility Audit](ACCESSIBILITY_AUDIT.md)**
 
-
 ---
 
 ## Table of Contents
@@ -528,7 +527,7 @@ const [open, setOpen] = useState(false)
 | Card       | ✅         | ✅   | ✅        |
 | Modal      | ✅         | ✅   | ✅        |
 | Spinner    | ✅         | ✅   | ✅        |
-| Tooltip    | 🚧 Planned |      |           |
+| Tooltip    | ✅         | ✅   | ✅        |
 | Dropdown   | 🚧 Planned |      |           |
 | Tabs       | 🚧 Planned |      |           |
 | Toast      | 🚧 Planned |      |           |
@@ -538,7 +537,7 @@ const [open, setOpen] = useState(false)
 
 ## Roadmap
 
-- Advanced components: Tooltip, Dropdown, Tabs, Toast, Pagination, etc.
+- Advanced components: ~~Tooltip~~, Dropdown, Tabs, Toast, Pagination, etc.
 - TypeScript types and support
 - Automated testing (Jest, Testing Library)
 - Improved documentation and demo site
