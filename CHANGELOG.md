@@ -7,15 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.1.1] - 2025-09-18
+## [Unreleased]
 
-### Fixed
+<!-- Add new unreleased changes here -->
 
-- Updated ESLint configuration to fully support JSX and React syntax
-- Added @babel/eslint-parser and @babel/preset-react for proper JSX parsing
-- Refactored eslint.config.js to use ES module imports and dynamic parser loading
-- Added React version detection to ESLint settings
-- Ensured linting works for all React component files
+---
+
+## [1.5.1] - 2025-09-26
+
+### Added
+
+- Accessible Dropdown component with full keyboard and screen reader support
+- Dropdown tests and documentation
+- Updated README to mark Dropdown as complete
+
+---
+
+## [1.5.0] - 2025-09-26
+
+### Added
+
+- Accessible Tooltip component with full keyboard and screen reader support
+- Tooltip tests and documentation
+- Updated README to mark Tooltip as complete
 
 ---
 
@@ -31,7 +45,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.1.1] - 2025-09-18
+
+### Fixed
+
+- Updated ESLint configuration to fully support JSX and React syntax
+- Added @babel/eslint-parser and @babel/preset-react for proper JSX parsing
+- Refactored eslint.config.js to use ES module imports and dynamic parser loading
+- Added React version detection to ESLint settings
+- Ensured linting works for all React component files
+
+---
+
+## [Initial]
 
 ### Added
 
@@ -43,7 +69,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SECURITY.md for responsible vulnerability disclosure
 - GitHub issue templates (bug report, feature request)
 - GitHub pull request template
-
----
-
-<!-- Add additional versions and changes below as the project evolves -->

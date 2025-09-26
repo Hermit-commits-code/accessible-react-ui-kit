@@ -528,7 +528,7 @@ const [open, setOpen] = useState(false)
 | Modal      | ✅         | ✅   | ✅        |
 | Spinner    | ✅         | ✅   | ✅        |
 | Tooltip    | ✅         | ✅   | ✅        |
-| Dropdown   | 🚧 Planned |      |           |
+| Dropdown   | ✅         | ✅   | ✅        |
 | Tabs       | 🚧 Planned |      |           |
 | Toast      | 🚧 Planned |      |           |
 | Pagination | 🚧 Planned |      |           |
@@ -537,7 +537,7 @@ const [open, setOpen] = useState(false)
 
 ## Roadmap
 
-- Advanced components: ~~Tooltip~~, Dropdown, Tabs, Toast, Pagination, etc.
+- Advanced components: ~~Tooltip~~, ~~Dropdown~~, Tabs, Toast, Pagination, etc.
 - TypeScript types and support
 - Automated testing (Jest, Testing Library)
 - Improved documentation and demo site
