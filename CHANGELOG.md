@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.6.0] - 2025-09-26
+
+### Added
+
+- Accessible Tabs component with full keyboard navigation and screen reader support
+- Tabs tests and documentation
+- Updated README to mark Tabs as complete
+
+---
+
 ## [1.5.1] - 2025-09-26
 
 ### Added

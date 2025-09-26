@@ -1,0 +1,31 @@
+.hcc-tabs {
+  width: 100%;
+}
+.hcc-tablist {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 0.5em;
+}
+.hcc-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  color: #222;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.hcc-tab.selected {
+  border-bottom: 2px solid #6366f1;
+  color: #3730a3;
+  font-weight: 600;
+}
+.hcc-tab:focus {
+  border-bottom: 2px solid #818cf8;
+  background: #eef2ff;
+}
+.hcc-tabpanel {
+  padding: 1em 0 0 0;
+}
