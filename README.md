@@ -515,23 +515,23 @@ const [open, setOpen] = useState(false)
 
 ## Component Status
 
-| Component  | Status     | Docs | Themeable |
-| ---------- | ---------- | ---- | --------- |
-| Button     | ✅         | ✅   | ✅        |
-| Input      | ✅         | ✅   | ✅        |
-| Textarea   | ✅         | ✅   | ✅        |
-| Select     | ✅         | ✅   | ✅        |
-| Checkbox   | ✅         | ✅   | ✅        |
-| RadioGroup | ✅         | ✅   | ✅        |
-| Alert      | ✅         | ✅   | ✅        |
-| Card       | ✅         | ✅   | ✅        |
-| Modal      | ✅         | ✅   | ✅        |
-| Spinner    | ✅         | ✅   | ✅        |
-| Tooltip    | ✅         | ✅   | ✅        |
-| Dropdown   | ✅         | ✅   | ✅        |
-| Tabs       | 🚧 Planned |      |           |
-| Toast      | 🚧 Planned |      |           |
-| Pagination | 🚧 Planned |      |           |
+| Component  | Status | Docs | Themeable |
+| ---------- | ------ | ---- | --------- |
+| Button     | ✅     | ✅   | ✅        |
+| Input      | ✅     | ✅   | ✅        |
+| Textarea   | ✅     | ✅   | ✅        |
+| Select     | ✅     | ✅   | ✅        |
+| Checkbox   | ✅     | ✅   | ✅        |
+| RadioGroup | ✅     | ✅   | ✅        |
+| Alert      | ✅     | ✅   | ✅        |
+| Card       | ✅     | ✅   | ✅        |
+| Modal      | ✅     | ✅   | ✅        |
+| Spinner    | ✅     | ✅   | ✅        |
+| Tooltip    | ✅     | ✅   | ✅        |
+| Dropdown   | ✅     | ✅   | ✅        |
+| Tabs       | ✅     | ✅   | ✅        |
+| Toast      | ✅     | ✅   | ✅        |
+| Pagination | ✅     | ✅   | ✅        |
 
 ---
 
