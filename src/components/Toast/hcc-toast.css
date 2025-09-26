@@ -1,0 +1,43 @@
+.hcc-toast {
+  min-width: 220px;
+  max-width: 360px;
+  margin: 1em auto;
+  padding: 1em 2.5em 1em 1.2em;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+  font-size: 1em;
+  color: #222;
+  background: #f3f4f6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+}
+.hcc-toast-success {
+  background: #e0fbe0;
+  color: #166534;
+}
+.hcc-toast-error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.hcc-toast-info {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+.hcc-toast-warning {
+  background: #fef9c3;
+  color: #a16207;
+}
+.hcc-toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.3em;
+  cursor: pointer;
+  position: absolute;
+  right: 0.7em;
+  top: 0.7em;
+  line-height: 1;
+}
