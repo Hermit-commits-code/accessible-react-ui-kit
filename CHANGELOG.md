@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.8.0] - 2025-09-26
+
+### Added
+
+- Accessible Pagination component with full keyboard and screen reader support
+- Pagination tests and documentation
+- Updated README to mark Pagination as complete
+
+---
+
 ## [1.7.0] - 2025-09-26
 
 ### Added

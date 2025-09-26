@@ -1,0 +1,37 @@
+.hcc-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  justify-content: center;
+  margin: 1em 0;
+}
+.hcc-pagination-btn {
+  background: none;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 0.4em 0.9em;
+  font-size: 1em;
+  color: #222;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.hcc-pagination-btn.active,
+.hcc-pagination-btn:focus {
+  background: #eef2ff;
+  border-color: #6366f1;
+  color: #3730a3;
+  outline: none;
+}
+.hcc-pagination-btn[disabled] {
+  color: #bbb;
+  border-color: #eee;
+  cursor: not-allowed;
+  background: #fafafa;
+}
+.hcc-pagination-ellipsis {
+  padding: 0 0.5em;
+  color: #bbb;
+  font-size: 1.1em;
+}
