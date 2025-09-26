@@ -39,6 +39,14 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 
 ---
 
+## What's New (v1.10.0)
+
+- **All major components complete!**
+  - Tooltip, Dropdown, Tabs, Toast, and Pagination are now fully implemented, tested, and documented.
+- **Accessibility-first:** Every new component follows WAI-ARIA best practices and is keyboard/screen reader friendly.
+- **Professional documentation:** Usage, props, and accessibility details for all components in the README.
+- **Version bump:** Package and repo are now at v1.10.0.
+
 ## Features
 
 - **MVP-first:** Fast, production-ready React components for quick prototyping and real apps.
@@ -95,6 +103,11 @@ import {
   Card,
   Modal,
   Spinner,
+  Tooltip,
+  Dropdown,
+  Tabs,
+  Toast,
+  Pagination,
 } from 'your-ui-library'
 
 function App() {
@@ -149,7 +162,7 @@ A modern, accessible input component with size, state, and help/error message su
   label="Username"
   id="username"
   value={username}
-  onChange={handleChange}
+  onChange={handleChange}component: usage + props + accessibility
   placeholder="Enter your username"
   required
   size="md"
@@ -208,7 +221,7 @@ A modern, accessible textarea with size, state, help/error messages, and optiona
 ```
 
 | Prop          | Type                   | Default | Description                           |
-| ------------- | ---------------------- | ------- | ------------------------------------- |
+| ------------- | ---------------------- | ------- | ------------------------------------- | ---------------------------------------- |
 | `label`       | `string`               | —       | Optional label text                   |
 | `id`          | `string`               | —       | Textarea id (required if using label) |
 | `value`       | `string`               | —       | Textarea value                        |
@@ -222,7 +235,7 @@ A modern, accessible textarea with size, state, help/error messages, and optiona
 | `error`       | `string`               | —       | Show error state/message              |
 | `success`     | `string`               | —       | Show success state/message            |
 | `help`        | `string`               | —       | Show help/hint text                   |
-| `maxLength`   | `number`               | —       | Maximum allowed character count       |
+| `maxLength`   | `number`               | —       | Maximum allowed character count       | component: usage + props + accessibility |
 | `showCount`   | `boolean`              | `false` | Show the character counter            |
 | `className`   | `string`               | —       | Extra CSS classes                     |
 | `...rest`     | `any`                  | —       | Any native textarea props             |
@@ -396,14 +409,140 @@ A visually distinct alert box for feedback messages, warnings, errors, and more.
 </Alert>
 ```
 
-| Prop        | Type                                          | Default  | Description                     |
 | ----------- | --------------------------------------------- | -------- | ------------------------------- |
-| `variant`   | `"info" \| "success" \| "warning" \| "error"` | `"info"` | Visual style and icon           |
-| `title`     | `string`                                      | —        | Optional bold title             |
-| `children`  | `node`                                        | —        | Main alert content              |
-| `onClose`   | `function`                                    | —        | Shows close button if present   |
-| `inline`    | `boolean`                                     | `false`  | Display inline (not full width) |
-| `className` | `string`                                      | —        | Extra CSS classes               |
+| Prop | Type | Default | Description |
+| ----------- | --------------------------------------------- | -------- | ------------------------------- |
+
+---
+
+### Tooltip
+
+Accessible tooltip for hints and descriptions.
+
+```jsx
+<Tooltip label="Helpful info">Hover or focus me</Tooltip>
+```
+
+| Prop        | Type        | Default | Description                       |
+| ----------- | ----------- | ------- | --------------------------------- | ------- | ------- | ---------------- |
+| `children`  | `ReactNode` | —       | Element that triggers the tooltip |
+| `label`     | `string`    | —       | Tooltip text                      |
+| `placement` | `"top"      | "right" | "bottom"                          | "left"` | `"top"` | Tooltip position |
+
+**Accessibility:**
+
+- Uses `aria-describedby` to link trigger and tooltip
+- Keyboard and mouse accessible (focus, hover, Escape to close)
+- Uses `role="tooltip"`
+
+---
+
+### Dropdown
+
+Accessible dropdown/select menu for options.
+
+```jsx
+<Dropdown
+  label="Choose an option"
+  options={[
+    { label: 'One', value: '1' },
+    { label: 'Two', value: '2' },
+  ]}
+  value={value}
+  onChange={setValue}
+/>
+```
+
+| Prop       | Type                                      | Default | Description     |
+| ---------- | ----------------------------------------- | ------- | --------------- |
+| `label`    | `string`                                  | —       | Dropdown label  |
+| `options`  | `Array<{ label: string, value: string }>` | —       | List of options |
+| `value`    | `string`                                  | —       | Selected value  |
+| `onChange` | `function(value: string)`                 | —       | Change handler  |
+
+**Accessibility:**
+
+- Uses `aria-haspopup`, `aria-expanded`, `aria-controls`, `role="listbox"`
+- Keyboard navigation and focus management
+- Screen reader friendly
+
+---
+
+### Tabs
+
+Accessible tabbed navigation for content panels.
+
+```jsx
+<Tabs
+  tabs={[
+    { label: 'Tab 1', content: <div>One</div> },
+    { label: 'Tab 2', content: <div>Two</div> },
+  ]}
+/>
+```
+
+| Prop           | Type                                           | Default | Description                  |
+| -------------- | ---------------------------------------------- | ------- | ---------------------------- |
+| `tabs`         | `Array<{ label: string, content: ReactNode }>` | —       | Tab labels and content       |
+| `defaultIndex` | `number`                                       | `0`     | Initially selected tab index |
+
+**Accessibility:**
+
+- Uses `role="tablist"`, `role="tab"`, `role="tabpanel"`
+- Keyboard navigation (Arrow keys)
+- Focus ring and screen reader support
+
+---
+
+### Toast
+
+Accessible toast notification for feedback messages.
+
+```jsx
+<Toast message="Saved!" open={open} onClose={closeToast} variant="success" />
+```
+
+| Prop       | Type         | Default | Description         |
+| ---------- | ------------ | ------- | ------------------- | ---------- | -------- | ----------- |
+| `message`  | `string`     | —       | Toast message       |
+| `open`     | `boolean`    | —       | Show/hide toast     |
+| `onClose`  | `function()` | —       | Close handler       |
+| `duration` | `number`     | `4000`  | Auto-close after ms |
+| `variant`  | `"success"   | "error" | "info"              | "warning"` | `"info"` | Toast style |
+
+**Accessibility:**
+
+- Uses `role="status"` and `aria-live` for announcements
+- Keyboard and screen reader friendly
+- Close button is focusable and labeled
+
+---
+
+### Pagination
+
+Accessible pagination controls for navigation.
+
+```jsx
+<Pagination page={2} pageCount={5} onPageChange={setPage} />
+```
+
+| Prop           | Type                     | Default | Description            |
+| -------------- | ------------------------ | ------- | ---------------------- |
+| `page`         | `number`                 | —       | Current page (1-based) |
+| `pageCount`    | `number`                 | —       | Total number of pages  |
+| `onPageChange` | `function(page: number)` | —       | Page change handler    |
+
+**Accessibility:**
+
+- Uses `aria-label`, `aria-current`, and labeled buttons
+- Keyboard and screen reader friendly
+- Focus ring visible
+  | `variant` | `"info" \| "success" \| "warning" \| "error"` | `"info"` | Visual style and icon |
+  | `title` | `string` | — | Optional bold title |
+  | `children` | `node` | — | Main alert content |
+  | `onClose` | `function` | — | Shows close button if present |
+  | `inline` | `boolean` | `false` | Display inline (not full width) |
+  | `className` | `string` | — | Extra CSS classes |
 
 **Accessibility:**
 
