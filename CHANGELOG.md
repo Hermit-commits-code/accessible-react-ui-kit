@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+
+## [1.11.0] - 2025-09-26
+
+### Added
+
+- Demo site now includes playgrounds for Tooltip, Dropdown, Tabs, Toast, and Pagination components
+- Updated navigation and component mapping in demo
+- Manual fixes to Pagination and Dropdown playgrounds
+
+---
+
 ## [Unreleased]
 
 <!-- Add new unreleased changes here -->

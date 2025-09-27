@@ -10,6 +10,11 @@ import AlertPlayground from './AlertPlayground'
 import CardPlayground from './CardPlayground'
 import ModalPlayground from './ModalPlayground'
 import SpinnerPlayground from './SpinnerPlayground'
+import TooltipPlayground from './TooltipPlayground'
+import PaginationPlayground from './PaginationPlayground'
+import ToastPlayground from './ToastPlayground'
+import TabsPlayground from './TabsPlayground'
+import DropdownPlayground from './DropdownPlayground'
 
 const COMPONENTS = {
   button: <ButtonPlayground />,
@@ -22,7 +27,11 @@ const COMPONENTS = {
   card: <CardPlayground />,
   modal: <ModalPlayground />,
   spinner: <SpinnerPlayground />,
-  // Add more component demos here
+  tooltip: <TooltipPlayground />,
+  pagination: <PaginationPlayground />,
+  toast: <ToastPlayground />,
+  tabs: <TabsPlayground />,
+  dropdown: <DropdownPlayground />,
 }
 
 function App() {

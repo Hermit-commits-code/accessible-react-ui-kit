@@ -12,6 +12,11 @@ const navItems = [
   { label: 'Card', id: 'card' },
   { label: 'Modal', id: 'modal' },
   { label: 'Spinner', id: 'spinner' },
+  { label: 'Tooltip', id: 'tooltip' },
+  { label: 'Pagination', id: 'pagination' },
+  { label: 'Toast', id: 'toast' },
+  { label: 'Tabs', id: 'tabs' },
+  { label: 'Dropdown', id: 'dropdown' },
 ]
 
 export default function Sidebar({ current, onNavigate }) {

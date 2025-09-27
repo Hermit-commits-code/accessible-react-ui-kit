@@ -39,13 +39,14 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 
 ---
 
-## What's New (v1.10.0)
 
-- **All major components complete!**
-  - Tooltip, Dropdown, Tabs, Toast, and Pagination are now fully implemented, tested, and documented.
-- **Accessibility-first:** Every new component follows WAI-ARIA best practices and is keyboard/screen reader friendly.
-- **Professional documentation:** Usage, props, and accessibility details for all components in the README.
-- **Version bump:** Package and repo are now at v1.10.0.
+## What's New (v1.11.0)
+
+- **Demo playgrounds for all components!**
+  - Tooltip, Dropdown, Tabs, Toast, and Pagination now have interactive demos on the live site.
+- **Navigation and mapping updated:** Sidebar and main demo now include all components.
+- **Manual fixes:** Pagination and Dropdown playgrounds improved.
+- **Version bump:** Package and repo are now at v1.11.0.
 
 ## Features
 
