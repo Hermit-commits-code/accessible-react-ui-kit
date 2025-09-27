@@ -7,7 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-
 ## [1.11.0] - 2025-09-26
 
 ### Added
@@ -15,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Demo site now includes playgrounds for Tooltip, Dropdown, Tabs, Toast, and Pagination components
 - Updated navigation and component mapping in demo
 - Manual fixes to Pagination and Dropdown playgrounds
+
+---
+
+
+## [1.12.0] - 2025-09-26
+
+### Fixed
+
+- Demo site now loads correctly with React and ReactDOM bundled
+- Asset paths and MIME type errors resolved
+- Updated Vite config for GitHub Pages compatibility
 
 ---
 

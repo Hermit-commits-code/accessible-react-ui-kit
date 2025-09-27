@@ -40,13 +40,12 @@ A modern, accessible, and customizable React component library for rapid MVP dev
 ---
 
 
-## What's New (v1.11.0)
+## What's New (v1.12.0)
 
-- **Demo playgrounds for all components!**
-  - Tooltip, Dropdown, Tabs, Toast, and Pagination now have interactive demos on the live site.
-- **Navigation and mapping updated:** Sidebar and main demo now include all components.
-- **Manual fixes:** Pagination and Dropdown playgrounds improved.
-- **Version bump:** Package and repo are now at v1.11.0.
+- **Demo site fully working!**
+  - React and ReactDOM are now bundled, so all playgrounds load without errors.
+- **Asset paths fixed:** No more MIME type errors or missing modules.
+- **Version bump:** Package and repo are now at v1.12.0.
 
 ## Features
 
